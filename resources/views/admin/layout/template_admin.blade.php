@@ -3,7 +3,7 @@
 <!-- [Head] start -->
 
 <head>
-  <title>Home | Mantis Bootstrap 5 Admin Template</title>
+  <title>Mybee Hotel & Resto</title>
   <!-- [Meta] -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -13,19 +13,19 @@
   <meta name="author" content="CodedThemes">
 
   <!-- [Favicon] icon -->
-  <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"> <!-- [Google Font] Family -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" id="main-font-link">
-<!-- [Tabler Icons] https://tablericons.com -->
-<link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" >
-<!-- [Feather Icons] https://feathericons.com -->
-<link rel="stylesheet" href="../assets/fonts/feather.css" >
-<!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/fontawesome.css" >
-<!-- [Material Icons] https://fonts.google.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/material.css" >
-<!-- [Template CSS Files] -->
-<link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" >
-<link rel="stylesheet" href="../assets/css/style-preset.css" >
+  <link rel="icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon"> <!-- [Google Font] Family -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" id="main-font-link">
+    <!-- [Tabler Icons] https://tablericons.com -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/tabler-icons.min.css') }}" >
+    <!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}" >
+    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}" >
+    <!-- [Material Icons] https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}" >
+    <!-- [Template CSS Files] -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" id="main-style-link" >
+    <link rel="stylesheet" href="{{ asset('assets/css/style-preset.css') }}" >
 
 </head>
 <!-- [Head] end -->
@@ -43,21 +43,21 @@
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header">
-      <a href="../dashboard/index.html" class="b-brand text-primary">
+      <a href="/dashboard" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
-        <img src="../assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
+        <img src="{{ asset('assets/images/pages/Screenshot_2025-05-15_224615-removebg-preview.png') }}" width="225px" alt="logo">
       </a>
     </div>
     <div class="navbar-content">
       <ul class="pc-navbar">
         <li class="pc-item">
-          <a href="../dashboard/index.html" class="pc-link">
+          <a href="./dashboard" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
             <span class="pc-mtext">Dashboard</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="../dashboard/index.html" class="pc-link">
+          <a href="/pengguna" class="pc-link">
             <span class="pc-micon"><i class="ti ti-user"></i></span>
             <span class="pc-mtext">Data Pengguna</span>
           </a>
@@ -68,19 +68,19 @@
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item">
-          <a href="../elements/bc_typography.html" class="pc-link">
+          <a href="/kategori-kamar" class="pc-link">
             <span class="pc-micon"><i class="ti ti-bed"></i></span>
             <span class="pc-mtext">Kategori Kamar</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="../elements/bc_color.html" class="pc-link">
+          <a href="/data-kamar" class="pc-link">
             <span class="pc-micon"><i class="ti ti-bed"></i></span>
             <span class="pc-mtext">Data Kamar</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="../elements/icon-tabler.html" class="pc-link">
+          <a href="/pesanan-kamar" class="pc-link">
             <span class="pc-micon"><i class="ti ti-calendar-event"></i></span>
             <span class="pc-mtext">Data Pesanan</span>
           </a>
@@ -91,30 +91,29 @@
           <i class="ti ti-news"></i>
         </li>
         <li class="pc-item">
-          <a href="../pages/login.html" class="pc-link">
+          <a href="/kategori-menu" class="pc-link">
             <span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span>
             <span class="pc-mtext">Kategori Menu</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="../pages/register.html" class="pc-link">
+          <a href="/data-menu" class="pc-link">
             <span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span>
             <span class="pc-mtext">Data Menu</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="../pages/register.html" class="pc-link">
+          <a href="/pesanan-menu" class="pc-link">
             <span class="pc-micon"><i class="ti ti-calendar-event"></i></span>
             <span class="pc-mtext">Data Pesanan</span>
           </a>
         </li>
-      </ul>
         <li class="pc-item pc-caption">
           <label>Pembayaran</label>
           <i class="ti ti-news"></i>
         </li>
         <li class="pc-item">
-          <a href="../pages/login.html" class="pc-link">
+          <a href="/data-pembayaran" class="pc-link">
             <span class="pc-micon"><i class="ti ti-cash-banknote"></i></span>
             <span class="pc-mtext">Data Pembayaran</span>
           </a>
@@ -171,6 +170,12 @@
 <div class="ms-auto">
   <ul class="list-unstyled">
     <li class="dropdown pc-h-item">
+        <a href="/Mybee-Hotel&resto" title="Ke Halaman Utama" class="pc-head-link dropdown-toggle arrow-none me-0"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button">
+        <i class="ti ti-brand-chrome"></i>
+        </a>
       <a
         class="pc-head-link dropdown-toggle arrow-none me-0"
         data-bs-toggle="dropdown"
@@ -204,7 +209,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-1.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">6:00 PM</span>
@@ -216,7 +221,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-3.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-3.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">2:45 PM</span>
@@ -228,7 +233,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-4.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-4.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">9:10 PM</span>
@@ -255,18 +260,18 @@
         data-bs-auto-close="outside"
         aria-expanded="false"
       >
-        <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
-        <span>Stebin Ben</span>
+        <img src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar">
+        <span>Moh. Iqbal Rasuli</span>
       </a>
       <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
         <div class="dropdown-header">
           <div class="d-flex mb-1">
             <div class="flex-shrink-0">
-              <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35">
+              <img src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar wid-35">
             </div>
             <div class="flex-grow-1 ms-3">
-              <h6 class="mb-1">Stebin Ben</h6>
-              <span>UI/UX Designer</span>
+              <h6 class="mb-1">Moh. Iqbal Rasuli</h6>
+              <span>Admin</span>
             </div>
             <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
           </div>
@@ -365,12 +370,12 @@
       <div class="row">
         <div class="col-sm my-1">
           <p class="m-0"
-            >Mantis &#9829; crafted by Team <a href="https://themeforest.net/user/codedthemes" target="_blank">Codedthemes</a> Distributed by <a href="https://themewagon.com/">ThemeWagon</a>.</p
+            >Mybee Hotel & Resto crafted by Team 7 Distributed by Informatics Engineering E23.</p
           >
         </div>
         <div class="col-auto my-1">
           <ul class="list-inline footer-link mb-0">
-            <li class="list-inline-item"><a href="../index.html">Home</a></li>
+            <li class="list-inline-item"><a href="/dashboard">Home</a></li>
           </ul>
         </div>
       </div>
@@ -378,16 +383,16 @@
   </footer>
 
   <!-- [Page Specific JS] start -->
-  <script src="../assets/js/plugins/apexcharts.min.js"></script>
-  <script src="../assets/js/pages/dashboard-default.js"></script>
+  <script src="{{ asset('assets/js/plugins/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('assets/js/pages/dashboard-default.js') }}"></script>
   <!-- [Page Specific JS] end -->
   <!-- Required Js -->
-  <script src="../assets/js/plugins/popper.min.js"></script>
-  <script src="../assets/js/plugins/simplebar.min.js"></script>
-  <script src="../assets/js/plugins/bootstrap.min.js"></script>
-  <script src="../assets/js/fonts/custom-font.js"></script>
-  <script src="../assets/js/pcoded.js"></script>
-  <script src="../assets/js/plugins/feather.min.js"></script>
+  <script src="{{ asset('assets/js/plugins/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/simplebar.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/fonts/custom-font.js') }}"></script>
+  <script src="{{ asset('assets/js/pcoded.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/feather.min.js') }}"></script>
   <script>layout_change('light');</script>
   <script>change_box_container('false');</script>
   <script>layout_rtl_change('false');</script>

@@ -11,9 +11,8 @@
                 <h5 class="m-b-10">Home</h5>
               </div>
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/dashboard">Kamar</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Data Kamar</a></li>
-                <li class="breadcrumb-item" aria-current="page">Data Kamar</li>
+                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                <li class="breadcrumb-item" aria-current="page">Pengguna</li>
               </ul>
             </div>
           </div>
@@ -26,53 +25,29 @@
         <div class="col-md-15">
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
-                <h3>Data Kamar</h3>
-                <a href="/tambah-kamar" class="btn btn-primary" >
-                  <i class="ti ti-circle-plus"></i>
-                  Tambah Kamar</a>
-              </div>
+              <h3>Data Pengguna</h3>
+              <button class="btn btn-primary">
+                <i class="ti ti-circle-plus"></i>
+                Tambah Pengguna</button>
+            </div>
             <div class="card-body table-border-style">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Nomer Kamar</th>
-                      <th>Kategori Kamar</th>
-                      <th>Lantai</th>
-                      <th>Status</th>
+                      <th>Nama</th>
+                      <th>Email</th>
+                      <th>Role</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>101</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
-                      <td>
-                        <a href="/edit-kamar" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>102</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
-                      <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>103</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
+                      <td>Iqbal</td>
+                      <td>iqbal@gmail.com</td>
+                      <td>Admin</td>
                       <td>
                         <a href="" class="btn btn-primary">Edit</a>
                         <a href="" class="btn btn-danger">Hapus</a>
