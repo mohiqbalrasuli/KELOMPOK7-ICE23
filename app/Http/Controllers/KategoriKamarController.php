@@ -8,16 +8,16 @@ class KategoriKamarController extends Controller
 {
     public function index()
     {
-        return view('admin.kategori_kamar.kategori_kamar');
+        return view('admin.bagian-kamar.kategori-kamar.kategori_kamar');
     }
 
     public function create()
     {
-        return view('admin.kategori_kamar.tambah_kategori');
+        return view('admin.bagian-kamar.kategori-kamar.tambah_kategori');
     }
 
     public function edit()
     {
-        return view('admin.kategori_kamar.edit_kategori');
+        return view('admin.bagian-kamar.kategori-kamar.edit_kategori');
     }
 }

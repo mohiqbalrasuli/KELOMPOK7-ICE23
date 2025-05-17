@@ -11,4 +11,14 @@ class PenggunaController extends Controller
             return view('admin.pengguna.pengguna');
         }
 
+    public function create()
+    {
+        return view('admin.pengguna.tambah-pengguna');
+    }
+
+    public function edit()
+    {
+        return view('admin.pengguna.edit-pengguna');
+    }
+
 }

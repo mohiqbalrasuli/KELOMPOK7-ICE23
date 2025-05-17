@@ -50,6 +50,7 @@
     </div>
     <div class="navbar-content">
       <ul class="pc-navbar">
+        {{-- @if (auth()->user()->role==='admin') --}}
         <li class="pc-item">
           <a href="./dashboard" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
@@ -113,12 +114,74 @@
           <i class="ti ti-news"></i>
         </li>
         <li class="pc-item">
+          <a href="/metode-pembayaran" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-cash-banknote"></i></span>
+            <span class="pc-mtext">Metode Pembayaran</span>
+          </a>
+        </li>
+        <li class="pc-item">
           <a href="/data-pembayaran" class="pc-link">
             <span class="pc-micon"><i class="ti ti-cash-banknote"></i></span>
             <span class="pc-mtext">Data Pembayaran</span>
           </a>
         </li>
-      </ul>
+    {{-- @elseif (auth()->user()->role==='staff pengelola hotel') --}}
+    {{-- <li class="pc-item pc-caption">
+          <label>Kamar</label>
+          <i class="ti ti-dashboard"></i>
+        </li>
+        </li>
+        <li class="pc-item">
+          <a href="/data-kamar" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-bed"></i></span>
+            <span class="pc-mtext">Data Kamar</span>
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="/pesanan-kamar" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-calendar-event"></i></span>
+            <span class="pc-mtext">Data Pesanan</span>
+          </a>
+        </li>
+        <li class="pc-item pc-caption">
+          <label>Pembayaran</label>
+          <i class="ti ti-news"></i>
+        </li>
+        <li class="pc-item">
+          <a href="/data-pembayaran" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-cash-banknote"></i></span>
+            <span class="pc-mtext">Data Pembayaran</span>
+          </a>
+        </li>--}}
+    {{-- @elseif (auth()->user()->role==='staff pengelola restoran') --}}
+        {{-- <li class="pc-item pc-caption">
+          <label>Restoran</label>
+          <i class="ti ti-news"></i>
+        </li>
+        <li class="pc-item">
+          <a href="/data-menu" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span>
+            <span class="pc-mtext">Data Menu</span>
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="/pesanan-menu" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-calendar-event"></i></span>
+            <span class="pc-mtext">Data Pesanan</span>
+          </a>
+        </li>
+        <li class="pc-item pc-caption">
+          <label>Pembayaran</label>
+          <i class="ti ti-news"></i>
+        </li>
+        <li class="pc-item">
+          <a href="/data-pembayaran" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-cash-banknote"></i></span>
+            <span class="pc-mtext">Data Pembayaran</span>
+          </a>
+        </li>--}}
+    {{-- @endif --}}
+        </ul>
     </div>
   </div>
 </nav>
@@ -169,13 +232,14 @@
 <!-- [Mobile Media Block end] -->
 <div class="ms-auto">
   <ul class="list-unstyled">
-    <li class="dropdown pc-h-item">
-        <a href="/Mybee-Hotel&resto" title="Ke Halaman Utama" class="pc-head-link dropdown-toggle arrow-none me-0"
-        data-bs-toggle="dropdown"
+    <li class="pc-h-item">
+        <a href="/mybee-hotel&resto" title="Ke Halaman Utama" class="pc-head-link"
         href="#"
         role="button">
         <i class="ti ti-brand-chrome"></i>
         </a>
+    </li>
+    <li class="dropdown pc-h-item">
       <a
         class="pc-head-link dropdown-toggle arrow-none me-0"
         data-bs-toggle="dropdown"

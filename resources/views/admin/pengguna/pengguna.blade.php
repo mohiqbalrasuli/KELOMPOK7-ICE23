@@ -26,9 +26,9 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
               <h3>Data Pengguna</h3>
-              <button class="btn btn-primary">
+              <a href="/tambah-pengguna" class="btn btn-primary">
                 <i class="ti ti-circle-plus"></i>
-                Tambah Pengguna</button>
+                Tambah Pengguna</a>
             </div>
             <div class="card-body table-border-style">
               <div class="table-responsive">
@@ -49,7 +49,7 @@
                       <td>iqbal@gmail.com</td>
                       <td>Admin</td>
                       <td>
-                        <a href="" class="btn btn-primary">Edit</a>
+                        <a href="/edit-pengguna" class="btn btn-primary">Edit</a>
                         <a href="" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
