@@ -51,5 +51,5 @@ Route::get('/metode-pembayaran',[MetodePembayaranController::class,'index']);
 Route::get('/data-pembayaran',[PembayaranController::class,'index']);
 
 Route::get('/mybee-hotel&resto', function () {
-    return view('user.landing-page');
+    return view('user.index');
 });
