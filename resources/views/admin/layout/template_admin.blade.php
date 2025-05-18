@@ -45,7 +45,7 @@
     <div class="m-header">
       <a href="/dashboard" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
-        <img src="{{ asset('assets/images/pages/Screenshot_2025-05-15_224615-removebg-preview.png') }}" width="225px" alt="logo">
+        <img src="{{ asset('assets/images/Screenshot_2025-05-15_224615-removebg-preview.png') }}" width="225px" alt="logo">
       </a>
     </div>
     <div class="navbar-content">
