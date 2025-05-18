@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Harborlights - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Mybee Hotel & Restaurant</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon"> <!-- [Google Font] Family -->
     <link rel="stylesheet" href="{{ asset('/assets/landing/css/open-iconic-bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('/assets/landing/css/animate.css') }}" />
 
@@ -53,22 +53,22 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="/mybee-hotel&resto" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="rooms.html" class="nav-link">Our Rooms</a>
+              <a href="/mybee-hotel&resto/rooms" class="nav-link">Our Rooms</a>
             </li>
             <li class="nav-item">
-              <a href="restaurant.html" class="nav-link">Restaurant</a>
+              <a href="/mybee-hotel&resto/restaurant" class="nav-link">Restaurant</a>
             </li>
             <li class="nav-item">
-              <a href="about.html" class="nav-link">About Us</a>
+              <a href="/mybee-hotel&resto/about" class="nav-link">About Us</a>
             </li>
             <li class="nav-item">
-              <a href="blog.html" class="nav-link">Blog</a>
+              <a href="/mybee-hotel&resto/blog" class="nav-link">Blog</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="/mybee-hotel&resto/contact" class="nav-link">Contact</a>
             </li>
           </ul>
         </div>
@@ -957,7 +957,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Harbor Lights</h2>
+              <h2 class="ftco-heading-2">Mybee Hotel & Restaurant</h2>
               <p>
                 Far far away, behind the word mountains, far from the countries
                 Vokalia and Consonantia, there live the blind texts.
@@ -1032,13 +1032,11 @@
           <div class="col-md-12 text-center">
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
+              Mybee Hotel & Restaurant
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              All rights reserved | This template is made with
-              <i class="icon-heart color-danger" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              crafted by Team 7 Distributed by Informatics Engineering E23.
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

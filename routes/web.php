@@ -12,6 +12,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananMenuController;
 use App\Http\Controllers\MetodePembayaranController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\LandingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,7 +50,10 @@ Route::get('/pesanan-menu',[MenuController::class,'pesanan']);
 Route::get('/metode-pembayaran',[MetodePembayaranController::class,'index']);
 // data pembayaran
 Route::get('/data-pembayaran',[PembayaranController::class,'index']);
-
-Route::get('/mybee-hotel&resto', function () {
-    return view('user.index');
-});
+// landing page
+Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
+Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
+Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
+Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
