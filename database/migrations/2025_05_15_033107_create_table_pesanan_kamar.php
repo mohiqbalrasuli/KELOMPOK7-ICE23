@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('kamar_id')->constrained('table_kamar')->onDelete('cascade');
-            $table->string('nama_pemesan');
             $table->string('no_telepon');
             $table->integer('jumlah_orang');
             $table->date('tanggal_checkin');
