@@ -24,12 +24,18 @@ Route::get('/register',[AuthController::class,'ShowRegister']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 // pengguna
 Route::get('/pengguna',[PenggunaController::class,'index']);
-Route::get('/tambah-pengguna',[PenggunaController::class,'create']);
-Route::get('/edit-pengguna',[PenggunaController::class,'edit']);
+Route::get('/pengguna/create',[PenggunaController::class,'create']);
+Route::post('/pengguna/store',[PenggunaController::class,'store']);
+Route::get('/pengguna/edit/{id}',[PenggunaController::class,'edit']);
+Route::post('/pengguna/update/{id}',[PenggunaController::class,'update']);
+Route::get('/pengguna/delete/{id}',[PenggunaController::class,'delete']);
 // kategori kamar
 Route::get('/kategori-kamar',[KategoriKamarController::class,'index']);
-Route::get('/tambah-kategori-kamar',[KategoriKamarController::class,'create']);
-Route::get('/edit-kategori-kamar',[KategoriKamarController::class,'edit']);
+Route::get('/kategori-kamar/create',[KategoriKamarController::class,'create']);
+Route::post('/kategori-kamar/store',[KategoriKamarController::class,'store']);
+Route::get('/kategori-kamar/edit/{id}',[KategoriKamarController::class,'edit']);
+Route::post('/kategori-kamar/update/{id}',[KategoriKamarController::class,'update']);
+Route::get('/kategori-kamar/delete/{id}',[KategoriKamarController::class,'delete']);
 // data kamar
 Route::get('/data-kamar',[KamarController::class,'index']);
 Route::get('/tambah-kamar',[KamarController::class,'create']);

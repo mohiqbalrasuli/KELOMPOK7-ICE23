@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
               <h3>Data Kategori Kamar</h3>
-              <a href="/tambah-kategori-kamar" class="btn btn-primary" >
+              <a href="/kategori-kamar/create" class="btn btn-primary" >
                 <i class="ti ti-circle-plus"></i>
                 Tambah Kategori</a>
             </div>
@@ -45,16 +45,19 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($kategori_kamar as $key => $value)
                     <tr>
-                      <td>1</td>
-                      <td>VIP</td>
-                      <td>Kategori ini cocok untuk satu keluarga yang sedang liburan ke luar kota</td>
-                      <td>5 Orang</td>
-                      <td>1.000.000</td>
+                      <td>{{ $key + 1 }}</td>
+                      <td>{{ $value->nama_kategori }}</td>
+                      <td>{{ $value->deskripsi }}</td>
+                      <td>{{ $value->kapasitas }}</td>
+                      <td>{{ $value->harga }}</td>
                       <td>
-                        <a href="/edit-kategori-kamar" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
+                        <a href="/kategori-kamar/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
+                        <a href="/kategori-kamar/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
                       </td>
+
+                    @endforeach
                     </tr>
                   </tbody>
                 </table>

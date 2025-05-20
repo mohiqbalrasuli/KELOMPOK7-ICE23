@@ -26,7 +26,7 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
               <h3>Data Pengguna</h3>
-              <a href="/tambah-pengguna" class="btn btn-primary">
+              <a href="/pengguna/create" class="btn btn-primary">
                 <i class="ti ti-circle-plus"></i>
                 Tambah Pengguna</a>
             </div>
@@ -43,16 +43,18 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pengguna as $key => $value)
                     <tr>
-                      <td>1</td>
-                      <td>Iqbal</td>
-                      <td>iqbal@gmail.com</td>
-                      <td>Admin</td>
+                      <td>{{ $key + 1 }}</td>
+                      <td>{{ $value->name }}</td>
+                      <td>{{ $value->email }}</td>
+                      <td>{{ $value->role }}</td>
                       <td>
-                        <a href="/edit-pengguna" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
+                        <a href="/pengguna/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
+                        <a href="/pengguna/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

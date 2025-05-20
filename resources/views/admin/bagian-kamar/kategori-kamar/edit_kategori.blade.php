@@ -27,24 +27,24 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form>
+                    <form action="/kategori-kamar/update/{{ $kategori_kamar->id }}" method="POST">
                         @csrf
                       <div class="form-group">
                         <label class="form-label" for="exampleInputName">Nama Kategori</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                        <input type="text" name="nama_kategori" value="{{ $kategori_kamar->nama_kategori }}" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
                           placeholder="Masukkan Nama Kategori">
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="exampleInputDeskripsi">Deskripsi</label>
-                        <input type="text" class="form-control" id="exampleInputDeskripsi" placeholder="Masukkan Deskripsi">
+                        <input type="text" name="deskripsi" value="{{ $kategori_kamar->deskripsi }}" class="form-control" id="exampleInputDeskripsi" placeholder="Masukkan Deskripsi">
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="exampleInputKapasitas">Kapasitas</label>
-                        <input type="number" class="form-control" id="exampleInputKapasitas" placeholder="Masukkan Kapasitas">
+                        <input type="number" name="kapasitas" value="{{ $kategori_kamar->kapasitas }}" class="form-control" id="exampleInputKapasitas" placeholder="Masukkan Kapasitas">
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="exampleInputHarga">Harga</label>
-                        <input type="number" class="form-control" id="exampleInputHarga" placeholder="Masukkan harga">
+                        <input type="number" name="harga" value="{{ $kategori_kamar->harga }}" class="form-control" id="exampleInputHarga" placeholder="Masukkan harga">
                       </div>
                       <button type="submit" class="btn btn-primary mb-4">Simpan</button>
                     </form>

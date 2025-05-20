@@ -27,27 +27,24 @@
         <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <form>
+                <form action="/pengguna/update/{{ $pengguna->id }}" method="POST">
                     @csrf
                   <div class="form-group">
                     <label class="form-label" for="exampleInputName">Nama Pengguna</label>
-                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                    <input type="text" name="name" value="{{ $pengguna->name }}" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
                       placeholder="Masukkan Nama Pengguna">
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="exampleInputEmail">Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail" placeholder="Masukkan Email">
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="exampleInputPassword">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Masukkan Password">
+                    <input type="email" name="email" value="{{ $pengguna->email }}" class="form-control" id="exampleInputEmail" placeholder="Masukkan Email">
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="exampleInpuRole">Role</label>
-                    <select class="mb-0 form-select">
-                        <option>Admin</option>
-                        <option>Staff Hotel</option>
-                        <option>Staff Restoran</option>
+                    <select class="mb-0 form-select" name="role">
+                        <option selected disabled></option>
+                        <option value="admin" {{ $pengguna->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                        <option value="staff pengelola kamar" {{ $pengguna->role == 'staff pengelola kamar' ? 'selected' : '' }}>Staff Hotel</option>
+                        <option value="staff pengelola restoran" {{ $pengguna->role == 'staff pengelola restoran' ? 'selected' : '' }}>Staff Restoran</option>
                     </select>
                   </div>
                   <button type="submit" class="btn btn-primary mb-4">Simpan</button>
