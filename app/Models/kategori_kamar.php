@@ -13,4 +13,9 @@ class kategori_kamar extends Model
         'kapasitas',
         'harga',
     ];
+
+    public function kamar()
+    {
+        return $this->hasMany(Kamar::class, 'kategori_kamar_id');
+    }
 }

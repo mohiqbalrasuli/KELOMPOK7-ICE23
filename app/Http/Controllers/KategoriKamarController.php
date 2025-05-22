@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kamar;
 use App\Models\kategori_kamar;
 use Illuminate\Http\Request;
 
@@ -57,7 +58,12 @@ class KategoriKamarController extends Controller
 
     public function delete($id)
     {
+        $kamar=kamar::where('kategori_kamar_id',$id)->first();
         $kategori_kamar = kategori_kamar::findOrFail($id);
+        if ($kamar) {
+            return redirect('/kategori-kamar')->with('error','Data Kategori Kamar Tidak Bisa Dihapus Karena Masih Digunakan');
+        }
+
         $kategori_kamar->delete();
         return redirect('/kategori-kamar')->with('status','Data Kategori Kamar Berhasil Dihapus');
     }

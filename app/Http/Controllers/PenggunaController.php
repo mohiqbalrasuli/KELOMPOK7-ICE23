@@ -10,7 +10,10 @@ class PenggunaController extends Controller
     public function index()
     {
         $pengguna = [
-            'pengguna' => User::all(),
+            'user' => User::where('role', 'user')->get(),
+            'admin' => User::where('role', 'admin')->get(),
+            'staff_hotel' => User::where('role', 'staff pengelola kamar')->get(),
+            'staff_restoran' => User::where('role', 'staff pengelola restoran')->get(),
         ];
         return view('admin.pengguna.pengguna', $pengguna);
     }

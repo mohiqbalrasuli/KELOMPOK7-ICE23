@@ -38,8 +38,11 @@ Route::post('/kategori-kamar/update/{id}',[KategoriKamarController::class,'updat
 Route::get('/kategori-kamar/delete/{id}',[KategoriKamarController::class,'delete']);
 // data kamar
 Route::get('/data-kamar',[KamarController::class,'index']);
-Route::get('/tambah-kamar',[KamarController::class,'create']);
-Route::get('/edit-kamar',[KamarController::class,'edit']);
+Route::get('/kamar/create',[KamarController::class,'create']);
+Route::post('/kamar/store',[KamarController::class,'store']);
+Route::get('/kamar/edit/{id}',[KamarController::class,'edit']);
+Route::post('/kamar/update/{id}',[KamarController::class,'update']);
+Route::get('/kamar/delete/{id}',[KamarController::class,'delete']);
 // pesanan kamar
 Route::get('/pesanan-kamar',[KamarController::class,'pesanan']);
 // kategori menu
