@@ -8,6 +8,7 @@ class kategori_kamar extends Model
 {
     protected $table = 'table_kategori_kamar';
     protected $fillable = [
+        'gambar',
         'nama_kategori',
         'deskripsi',
         'kapasitas',

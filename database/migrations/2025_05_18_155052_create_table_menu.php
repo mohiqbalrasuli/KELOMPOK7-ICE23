@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('table_menu', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('nama_menu');
             $table->decimal('harga',10,2);
             $table->foreignId('kategori_menu_id')->constrained('table_kategori_menu')->onDelete('cascade');

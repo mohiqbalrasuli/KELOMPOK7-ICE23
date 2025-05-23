@@ -47,12 +47,18 @@ Route::get('/kamar/delete/{id}',[KamarController::class,'delete']);
 Route::get('/pesanan-kamar',[KamarController::class,'pesanan']);
 // kategori menu
 Route::get('/kategori-menu',[KategoriMenuController::class,'index']);
-Route::get('/tambah-kategori-menu',[KategoriMenuController::class,'create']);
-Route::get('/edit-kategori-menu',[KategoriMenuController::class,'edit']);
+Route::get('/kategori-menu/create',[KategoriMenuController::class,'create']);
+Route::post('/kategori-menu/store',[KategoriMenuController::class,'store']);
+Route::get('/kategori-menu/edit/{id}',[KategoriMenuController::class,'edit']);
+Route::post('/kategori-menu/update/{id}',[KategoriMenuController::class,'update']);
+Route::get('/kategori-menu/delete/{id}',[KategoriMenuController::class,'delete']);
 // data menu
 Route::get('/data-menu',[MenuController::class,'index']);
-Route::get('/tambah-menu',[MenuController::class,'create']);
-Route::get('/edit-menu',[MenuController::class,'edit']);
+Route::get('/data-menu/create',[MenuController::class,'create']);
+Route::post('/data-menu/store',[MenuController::class,'store']);
+Route::get('/data-menu/edit/{id}',[MenuController::class,'edit']);
+Route::post('/data-menu/update/{id}',[MenuController::class,'update']);
+Route::get('/data-menu/delete/{id}',[MenuController::class,'delete']);
 // pesanan menu
 Route::get('/pesanan-menu',[MenuController::class,'pesanan']);
 // metode pembayaran

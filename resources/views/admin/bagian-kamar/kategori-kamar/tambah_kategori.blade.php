@@ -27,8 +27,13 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="/kategori-kamar-store" method="POST">
+                    <form action="/kategori-kamar/store" method="POST" enctype="multipart/form-data">
                         @csrf
+                      <div class="form-group">
+                        <label class="form-label" for="exampleInputGambar">Gambar</label>
+                        <input type="file" name="gambar" class="form-control" id="exampleInputGambar" aria-describedby="emailHelp"
+                          placeholder="Masukkan gambar">
+                      </div>
                       <div class="form-group">
                         <label class="form-label" for="exampleInputName">Nama Kategori</label>
                         <input type="text" name="nama_kategori" class="form-control" id="exampleInputName" aria-describedby="emailHelp"

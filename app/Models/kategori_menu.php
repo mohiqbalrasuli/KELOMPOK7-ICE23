@@ -11,4 +11,8 @@ class kategori_menu extends Model
         'nama_kategori_menu',
         'deskripsi',
     ];
+    public function menu()
+    {
+        return $this->hasMany(menu::class, 'kategori_menu_id', 'id');
+    }
 }
