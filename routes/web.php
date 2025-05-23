@@ -6,10 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\KategoriKamarController;
 use App\Http\Controllers\PenggunaController;
-use App\Http\Controllers\PesananKamarController;
 use App\Http\Controllers\KategoriMenuController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\PesananMenuController;
 use App\Http\Controllers\MetodePembayaranController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\LandingController;
@@ -63,6 +61,11 @@ Route::get('/data-menu/delete/{id}',[MenuController::class,'delete']);
 Route::get('/pesanan-menu',[MenuController::class,'pesanan']);
 // metode pembayaran
 Route::get('/metode-pembayaran',[MetodePembayaranController::class,'index']);
+Route::get('/metode-pembayaran/create',[MetodePembayaranController::class,'create']);
+Route::post('/metode-pembayaran/store',[MetodePembayaranController::class,'store']);
+Route::get('/metode-pembayaran/edit/{id}',[MetodePembayaranController::class,'edit']);
+Route::post('/metode-pembayaran/update/{id}',[MetodePembayaranController::class,'update']);
+Route::get('/metode-pembayaran/delete/{id}',[MetodePembayaranController::class,'delete']);
 // data pembayaran
 Route::get('/data-pembayaran',[PembayaranController::class,'index']);
 // landing page

@@ -24,9 +24,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h3>Data Metode Pembayaran</h3>
-                </div>
+                <div class="card-header" style="display: flex; justify-content:space-between">
+                <h3>Data Metode Pembayaran</h3>
+                <a href="/metode-pembayaran/create" class="btn btn-primary" >
+                  <i class="ti ti-circle-plus"></i>
+                  Tambah Menu</a>
+              </div>
                 <div class="card-body table-border-style">
                     <div class="table-responsive">
                         <table class="table">
@@ -39,15 +42,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($metode_pembayaran as $key => $value )
                                 <tr>
-                                    <td>1</td>
-                                    <td>BRI</td>
-                                    <td>1234567890</td>
+                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $value->nama_bank }}</td>
+                                    <td>{{ $value->no_rekening }}</td>
                                     <td>
-                                        <a href="/edit-pembayaran" class="btn btn-primary">Edit</a>
-                                        <a href="" class="btn btn-danger">Hapus</a>
+                                        <a href="/metode-pembayaran/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
+                                        <a href="/metode-pembayaran/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
