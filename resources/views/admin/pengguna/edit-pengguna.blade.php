@@ -27,7 +27,7 @@
         <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <form action="/pengguna/update/{{ $pengguna->id }}" method="POST">
+                <form action="{{ url('admin/pengguna/update/'.$pengguna->id) }}" method="POST">
                     @csrf
                   <div class="form-group">
                     <label class="form-label" for="exampleInputName">Nama Pengguna</label>

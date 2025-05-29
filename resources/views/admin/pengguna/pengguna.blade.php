@@ -26,9 +26,11 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
               <h3>Data Pengguna</h3>
-              <a href="/pengguna/create" class="btn btn-primary">
+              @if (auth()->user()->role === 'admin')
+              <a href="{{ url('admin/pengguna/create') }}" class="btn btn-primary">
                 <i class="ti ti-circle-plus"></i>
                 Tambah Pengguna</a>
+                @endif
             </div>
             <div class="card-body table-border-style">
               <div class="table-responsive">

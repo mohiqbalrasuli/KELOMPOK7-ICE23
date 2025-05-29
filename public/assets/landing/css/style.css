@@ -10085,3 +10085,74 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    /* Auth Styles */
+    .user-menu {
+        margin-left: 20px;
+    }
+
+    .user-menu .dropdown-toggle {
+        background: transparent;
+        border: none;
+        color: #fff;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+    }
+
+    /* Add styles for scrolled state */
+    .scrolled .user-menu .dropdown-toggle {
+        color: #000;
+    }
+
+    .user-menu .dropdown-toggle:hover,
+    .user-menu .dropdown-toggle:focus {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+
+    /* Update hover state for scrolled */
+    .scrolled .user-menu .dropdown-toggle:hover,
+    .scrolled .user-menu .dropdown-toggle:focus {
+        color: #000;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .user-menu .dropdown-menu {
+        background: #fff;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 8px 0;
+        min-width: 200px;
+    }
+
+    .user-menu .dropdown-item {
+        padding: 8px 20px;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .user-menu .dropdown-item:hover {
+        background: #f8f9fa;
+        color: #007bff;
+    }
+
+    .user-menu .dropdown-divider {
+        margin: 8px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .user-menu .btn-primary {
+        background: #007bff;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .user-menu .btn-primary:hover {
+        background: #0056b3;
+    }

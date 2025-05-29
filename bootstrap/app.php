@@ -10,8 +10,16 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
+    ->withMiddleware(function () {
         //
+    })
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\RoleMiddleware::class.':admin',
+            'staff_pengelola_kamar' => \App\Http\Middleware\RoleMiddleware::class.':staff_pengelola_kamar',
+            'staff_pengelola_restoran' => \App\Http\Middleware\RoleMiddleware::class.':staff_pengelola_restoran',
+            'user' => \App\Http\Middleware\RoleMiddleware::class.':user',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

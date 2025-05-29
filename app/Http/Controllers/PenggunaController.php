@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PenggunaController extends Controller
 {
@@ -12,8 +13,8 @@ class PenggunaController extends Controller
         $pengguna = [
             'user' => User::where('role', 'user')->get(),
             'admin' => User::where('role', 'admin')->get(),
-            'staff_hotel' => User::where('role', 'staff pengelola kamar')->get(),
-            'staff_restoran' => User::where('role', 'staff pengelola restoran')->get(),
+            'staff_hotel' => User::where('role', 'staff_pengelola_kamar')->get(),
+            'staff_restoran' => User::where('role', 'staff_pengelola_restoran')->get(),
         ];
         return view('admin.pengguna.pengguna', $pengguna);
     }
@@ -36,7 +37,14 @@ class PenggunaController extends Controller
             'role' => $request->role,
         ];
         User::create($data);
-        return redirect('/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+
+        if (Auth::user()->role === 'admin') {
+            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        }
     }
 
     public function edit($id)
@@ -55,12 +63,24 @@ class PenggunaController extends Controller
             'role' => $request->role,
         ];
         User::where('id', $id)->update($data);
-        return redirect('/pengguna')->with('success', 'Pengguna berhasil diubah');
+        if (Auth::user()->role === 'admin') {
+            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
+        }
     }
     public function delete($id)
     {
         $kategori_kamar = User::findOrFail($id);
         $kategori_kamar->delete();
-        return redirect('/pengguna')->with('status','Data Kategori Kamar Berhasil Dihapus');
+        if (Auth::user()->role === 'admin') {
+            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil dihapus');
+        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil dihapus');
+        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil dihapus');
+        }
     }
 }
