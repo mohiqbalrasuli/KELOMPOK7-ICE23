@@ -79,6 +79,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
     Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
+    Route::post('/mybee-hotel&resto/contact/store',[LandingController::class,'sendMessege']);
 });
 Route::prefix('staff-kamar')-> middleware(['auth', 'staff_pengelola_kamar'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -112,6 +113,7 @@ Route::prefix('staff-kamar')-> middleware(['auth', 'staff_pengelola_kamar'])->gr
      Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
      Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
      Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
+     Route::post('/mybee-hotel&resto/contact/store',[LandingController::class,'sendMessege']);
 });
 Route::prefix('staff-restoran')-> middleware(['auth', 'staff_pengelola_restoran'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -138,6 +140,7 @@ Route::prefix('staff-restoran')-> middleware(['auth', 'staff_pengelola_restoran'
      Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
      Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
      Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
+     Route::post('/mybee-hotel&resto/contact/store',[LandingController::class,'sendMessege']);
 });
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
@@ -148,6 +151,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
     Route::get('/mybee-hotel&resto/blog/blog-singgle',[LandingController::class,'blog_singgle']);
     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
+    Route::post('/mybee-hotel&resto/contact/store',[LandingController::class,'sendMessege']);
 
 });
 // landing page

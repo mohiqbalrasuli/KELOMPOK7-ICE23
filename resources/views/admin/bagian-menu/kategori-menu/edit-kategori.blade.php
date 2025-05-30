@@ -27,8 +27,14 @@
         <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <form action="/kategori-menu/update/{{ $kategori_menu->id }}" method="POST">
+                @if (auth()->user()->role === 'admin')
+                <form action="{{ url('admin/kategori-menu/update/' . $kategori_menu->id) }}" method="POST">
                     @csrf
+
+                @elseif (auth()->user()->role==='staff_pengelola_restoran')
+                    <form action="{{ url('staff-restoran/kategori-menu/update/' . $kategori_menu->id) }}" method="POST">
+                    @csrf
+                @endif
                   <div class="form-group">
                     <label class="form-label" for="exampleInputName">Nama Kategori</label>
                     <input type="text" name="nama_kategori_menu" value="{{ $kategori_menu->nama_kategori_menu }}" class="form-control" id="exampleInputName" aria-describedby="emailHelp"

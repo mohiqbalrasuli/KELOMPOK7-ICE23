@@ -27,9 +27,15 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content:space-between">
                         <h3>Data Kategori Menu</h3>
-                        <a href="/kategori-menu/create" class="btn btn-primary">
-                            <i class="ti ti-circle-plus"></i>
-                            Tambah Kategori</a>
+                        @if (auth()->user()->role === 'admin')
+                            <a href="{{ url('admin/kategori-menu/create') }}" class="btn btn-primary">
+                                <i class="ti ti-circle-plus"></i>
+                                Tambah Kategori</a>
+                        @elseif (auth()->user()->role === 'staff_pengelola_restoran')
+                            <a href="{{ url('staff-kamar/kategori-menu/create') }}" class="btn btn-primary">
+                                <i class="ti ti-circle-plus"></i>
+                                Tambah Kategori</a>
+                        @endif
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">
@@ -43,16 +49,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kategori_menu as $ket => $value)
+                                    @foreach ($kategori_menu as $key => $value)
                                         <tr>
-                                            <td>{{ $ket + 1 }}</td>
+                                            <td>{{ $key + 1 }}</td>
                                             <td>{{ $value->nama_kategori_menu }}</td>
                                             <td>{{ $value->deskripsi }}</td>
                                             <td>
-                                                <a href="/kategori-menu/edit/{{ $value->id }}"
-                                                    class="btn btn-primary">Edit</a>
-                                                <a href="/kategori-menu/delete/{{ $value->id }}"
-                                                    class="btn btn-danger">Hapus</a>
+                                                @if (auth()->user()->role === 'admin')
+                                                    <a href="{{ url('admin/kategori-menu/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('admin/kategori-menu/delete/' . $value->id) }}"
+                                                        class="btn btn-danger">Hapus</a>
+                                                @elseif (auth()->user()->role === 'staff_pengelola_restoran')
+                                                    <a href="{{ url('staff-restoran/kategori-menu/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('staff-restoran/kategori-menu/delete/' . $value->id) }}"
+                                                        class="btn btn-danger">Hapus</a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
