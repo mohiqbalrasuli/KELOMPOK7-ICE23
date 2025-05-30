@@ -10,7 +10,7 @@ class MetodePembayaranController extends Controller
     public function index()
     {
         $metode_pembayaran = metode_pembayaran::all();
-        return view('admin.bagian-pembayaran.metode-pembayaran.data-metode-pembayaran',$metode_pembayaran);
+        return view('admin.bagian-pembayaran.metode-pembayaran.data-metode-pembayaran',compact('metode_pembayaran'));
     }
 
     public function create()
@@ -27,7 +27,7 @@ class MetodePembayaranController extends Controller
         ];
 
         metode_pembayaran::create($data);
-        return redirect('/metode-pembayaran')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('admin/metode-pembayaran')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function edit($id)
@@ -36,9 +36,20 @@ class MetodePembayaranController extends Controller
         return view('admin.bagian-pembayaran.metode-pembayaran.edit-metode',$metode_pembayaran);
     }
 
+    public function update(Request $request, $id)
+    {
+        $data=[
+            'nama_bank'=>$request->nama_bank,
+            'no_rekening'=>$request->no_rekening,
+        ];
+
+        metode_pembayaran::update($data);
+        return redirect('admin/metode-pembayaran')->with('success', 'Data Berhasil Diupdate');
+    }
+
     public function delete($id)
     {
         metode_pembayaran::where('id', $id)->delete();
-        return redirect('/metode-pembayaran')->with('success', 'Data Kamar Berhasil Dihapus');
+        return redirect('admin/metode-pembayaran')->with('success', 'Data Kamar Berhasil Dihapus');
     }
 }

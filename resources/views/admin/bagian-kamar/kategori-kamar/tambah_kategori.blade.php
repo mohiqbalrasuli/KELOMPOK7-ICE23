@@ -27,7 +27,11 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="/kategori-kamar/store" method="POST" enctype="multipart/form-data">
+                    @if (auth()->user()->role === 'admin')
+                    <form action="{{ url('admin/kategori-kamar/store') }}" method="POST" enctype="multipart/form-data">
+                    @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                    <form action="{{ url('staff-kamar/kategori-kamar/store') }}" method="POST" enctype="multipart/form-data">
+                    @endif
                         @csrf
                       <div class="form-group">
                         <label class="form-label" for="exampleInputGambar">Gambar</label>

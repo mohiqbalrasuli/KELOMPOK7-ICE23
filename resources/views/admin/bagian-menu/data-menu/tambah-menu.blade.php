@@ -27,8 +27,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <form action="/data-menu/store" method="POST" enctype="multipart/form-data">
+                                @if (auth()->user()->role==='admin')
+                                <form action="{{ url('admin/data-menu/store') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
+                                @elseif (auth()->user()->role==='staff_pengelola_restoran')
+                                <form action="{{ url('staff-restoran/data-menu/store/') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                @endif
                                     <div class="form-group">
                                         <label class="form-label" for="exampleInputgambar">Gambar</label>
                                         <input type="file" name="gambar" class="form-control" id="exampleInpugambar"

@@ -27,9 +27,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <form action="/kategori-kamar/update/{{ $kategori_kamar->id }}" method="POST"
+                                @if (auth()->user()->role === 'admin')
+                                <form action="{{ url('admin/kategori-kamar/update/'.$kategori_kamar->id) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
+                                @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                                <form action="{{ url('staff-kamar/kategori-kamar/update/'.$kategori_kamar->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                @endif
                                     <div class="form-group">
                                         <label class="form-label" for="exampleInputGambar">Gambar</label>
                                         <input type="file" name="gambar" class="form-control" id="exampleInputGambar"

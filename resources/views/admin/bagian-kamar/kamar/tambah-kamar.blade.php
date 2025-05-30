@@ -52,7 +52,8 @@
                         <select class="mb-0 form-select" name="status">
                             <option selected disabled>--Status--</option>
                             <option value="tersedia">Tersedia</option>
-                            <option value="tidak_tersedia">Tidak Tersedia</option>
+                            <option value="terisi">Terisi</option>
+                            <option value="maintenance">Maintenance</option>
                         </select>
                       </div>
                       <button type="submit" class="btn btn-primary mb-4">Simpan</button>

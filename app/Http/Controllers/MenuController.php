@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\menu;
 use App\Models\kategori_menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -35,7 +36,11 @@ class MenuController extends Controller
             $data['gambar'] = $filename;
         }
         menu::create($data);
-        return redirect('/data-menu')->with('success', 'Data Berhasil Ditambahkan');
+        if (Auth::user()->role == 'admin') {
+            return redirect('admin/data-menu')->with('success', 'Data Berhasil Ditambahkan');
+        } elseif (Auth::user()->role == 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/data-menu')->with('success', 'Data Berhasil Ditambahkan');
+        }
     }
 
     public function edit($id)
@@ -71,7 +76,11 @@ class MenuController extends Controller
         }
 
         menu::where('id', $id)->update($data);
-        return redirect('/data-menu')->with('success', 'Data Berhasil Diubah');
+        if (Auth::user()->role == 'admin') {
+            return redirect('admin/data-menu')->with('success', 'Data Berhasil Diubah');
+        } elseif (Auth::user()->role == 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/data-menu')->with('success', 'Data Berhasil Diubah');
+        }
     }
 
     public function delete($id)
@@ -81,6 +90,11 @@ class MenuController extends Controller
             unlink(public_path('assets/images/menu/' . $menu->gambar));
         }
         $menu->delete();
+        if (Auth::user()->role == 'admin') {
+            return redirect('admin/data-menu')->with('success', 'Data Berhasil Dihapus');
+        } elseif (Auth::user()->role == 'staff_pengelola_restoran') {
+            return redirect('staff-restoran/data-menu')->with('success', 'Data Berhasil Dihapus');
+        }
         return redirect('/data-menu')->with('success', 'Data Berhasil Dihapus');
     }
 

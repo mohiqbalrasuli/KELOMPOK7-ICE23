@@ -27,9 +27,15 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content:space-between">
                         <h3>Data Kategori Kamar</h3>
-                        <a href="/kategori-kamar/create" class="btn btn-primary">
+                        @if (auth()->user()->role === 'admin')
+                        <a href="{{ url('admin/kategori-kamar/create') }}" class="btn btn-primary">
                             <i class="ti ti-circle-plus"></i>
                             Tambah Kategori</a>
+                        @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                        <a href="{{ url('staff-kamar/kategori-kamar/create') }}" class="btn btn-primary">
+                            <i class="ti ti-circle-plus"></i>
+                            Tambah Kategori</a>
+                        @endif
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">
@@ -55,10 +61,17 @@
                                             <td>{{ $value->kapasitas }}</td>
                                             <td>{{ $value->harga }}</td>
                                             <td>
-                                                <a href="/kategori-kamar/edit/{{ $value->id }}"
+                                                @if (auth()->user()->role === 'admin')
+                                                <a href="{{ url('admin/kategori-kamar/edit/'.$value->id) }}"
                                                     class="btn btn-primary">Edit</a>
-                                                <a href="/kategori-kamar/delete/{{ $value->id }}"
+                                                <a href="{{ url('admin/kategori-kamar/delete/'.$value->id) }}"
                                                     class="btn btn-danger">Hapus</a>
+                                                @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                                                <a href="{{ url('staff-kamar/kategori-kamar/edit/'.$value->id) }}"
+                                                    class="btn btn-primary">Edit</a>
+                                                <a href="{{ url('staff-kamar/kategori-kamar/delete/'.$value->id) }}"
+                                                    class="btn btn-danger">Hapus</a>
+                                                @endif
                                             </td>
                                     @endforeach
                                     </tr>

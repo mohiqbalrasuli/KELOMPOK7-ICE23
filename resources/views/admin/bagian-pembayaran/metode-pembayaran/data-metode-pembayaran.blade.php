@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Metode Pembayaran</h3>
-                <a href="/metode-pembayaran/create" class="btn btn-primary" >
+                <a href="{{ url('admin/metode-pembayaran/create') }}" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Menu</a>
               </div>
@@ -48,8 +48,8 @@
                                     <td>{{ $value->nama_bank }}</td>
                                     <td>{{ $value->no_rekening }}</td>
                                     <td>
-                                        <a href="/metode-pembayaran/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                                        <a href="/metode-pembayaran/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                                        <a href="{{ url('admin/metode-pembayaran/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('admin/metode-pembayaran/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach

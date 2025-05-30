@@ -52,7 +52,8 @@
                         <select class="mb-0 form-select" name="status">
                             <option selected disabled>--Pilih Status--</option>
                             <option value="tersedia" {{ $kamar->status == 'tersedia' ? 'selected' : '' }}>Tersedia</option>
-                            <option value="tidak_tersedia" {{ $kamar->status == 'tidsk_tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                            <option value="terisi" {{ $kamar->status == 'terisi' ? 'selected' : '' }}>Terisi</option>
+                            <option value="maintenance" {{ $kamar->status == 'maintenance' ? 'selected' : '' }}>Maintenance</option>
                         </select>
                       </div>
                       <button type="submit" class="btn btn-primary mb-4">Simpan</button>

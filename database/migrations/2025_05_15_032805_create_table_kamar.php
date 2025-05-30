@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nomer_kamar');
             $table->foreignId('kategori_kamar_id')->constrained('table_kategori_kamar')->onDelete('cascade');
             $table->string('lantai');
-            $table->enum('status', ['tersedia', 'tidak_tersedia'])->default('tersedia');
+            $table->enum('status', ['tersedia', 'terisi', 'maintenance'])->default('tersedia');
             $table->timestamps();
         });
     }

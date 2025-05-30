@@ -27,9 +27,15 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Kamar</h3>
-                <a href="/kamar/create" class="btn btn-primary" >
+                @if (auth()->user()->role === 'admin')
+                <a href="{{ url('admin/kamar/create') }}" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Kamar</a>
+                @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                <a href="{{ url('staff-kamar/kamar/create') }}" class="btn btn-primary" >
+                  <i class="ti ti-circle-plus"></i>
+                  Tambah Kamar</a>
+                @endif
               </div>
             <div class="card-body table-border-style">
               <div class="table-responsive">
@@ -53,8 +59,13 @@
                       <td>{{ $value->lantai }}</td>
                       <td>{{ $value->status }}</td>
                       <td>
-                        <a href="/kamar/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/kamar/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        @if (auth()->user()->role === 'admin')
+                        <a href="{{ url('admin/kamar/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/kamar/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                        <a href="{{ url('staff-kamar/kamar/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('staff-kamar/kamar/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        @endif
                       </td>
                     </tr>
                     @endforeach

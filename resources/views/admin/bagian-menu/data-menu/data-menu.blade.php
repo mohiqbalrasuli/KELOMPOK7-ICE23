@@ -27,9 +27,15 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Menu</h3>
-                <a href="/data-menu/create" class="btn btn-primary" >
+                @if (auth()->user()->role === 'admin')
+                <a href="{{ url('admin/menu/create') }}" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Menu</a>
+                @elseif (auth()->user()->role === 'staff_pengelola_restoran')
+                <a href="{{ url('staff-restoran/menu/create') }}" class="btn btn-primary" >
+                  <i class="ti ti-circle-plus"></i>
+                  Tambah Menu</a>
+                @endif
               </div>
             <div class="card-body table-border-style">
               <div class="table-responsive">
@@ -53,8 +59,13 @@
                       <td>{{ $value->kategori_menu->nama_kategori_menu }}</td>
                       <td>{{ $value->harga }}</td>
                       <td>
-                        <a href="/data-menu/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/data-menu/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        @if (auth()->user()->role === 'admin')
+                        <a href="{{ url('admin/menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        @elseif (auth()->user()->role === 'staff_pengelola_restoran')
+                        <a href="{{ url('staff-restoran/menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('staff-restoran/menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        @endif
 
                       @endforeach
                     </tr>

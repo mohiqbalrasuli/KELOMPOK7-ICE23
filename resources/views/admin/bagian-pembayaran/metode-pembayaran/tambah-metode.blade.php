@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <form action="/metode-pembayaran/store" method="POST">
+                                <form action="{{ url('admin/metode-pembayaran/store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="exampleInputnamabank">Nama Menu</label>

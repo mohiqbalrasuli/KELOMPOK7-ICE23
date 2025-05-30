@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kamar;
 use App\Models\kategori_kamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KategoriKamarController extends Controller
 {
@@ -40,7 +41,11 @@ class KategoriKamarController extends Controller
             $data['gambar'] = $filename;
         }
         kategori_kamar::create($data);
-        return redirect('/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Ditambahkan');
+        if (Auth::user()->role == 'admin') {
+            return redirect('admin/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Ditambahkan');
+        } elseif (Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Ditambahkan');
+        }
     }
 
     public function edit($id)
@@ -79,7 +84,11 @@ class KategoriKamarController extends Controller
         }
 
         $kategori_kamar->update($data);
-        return redirect('/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Diubah');
+        if(Auth::user()->role == 'admin') {
+            return redirect('admin/kategori-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+        }elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/kategori-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+        }
     }
 
     public function delete($id)
@@ -87,13 +96,21 @@ class KategoriKamarController extends Controller
         $kamar = kamar::where('kategori_kamar_id', $id)->first();
         $kategori_kamar = kategori_kamar::findOrFail($id);
         if ($kamar) {
-            return redirect('/kategori-kamar')->with('error', 'Data Kategori Kamar Tidak Bisa Dihapus Karena Masih Digunakan');
+            if(Auth::user()->role == 'admin') {
+                return redirect('admin/kategori-kamar')->with('error', 'Data Kategori Kamar Tidak Bisa Dihapus Karena Masih Digunakan');
+            } elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+                return redirect('staff-kamar/kategori-kamar')->with('error', 'Data Kategori Kamar Tidak Bisa Dihapus Karena Masih Digunakan');
+            }
         }
         if ($kategori_kamar->gambar && file_exists(public_path('assets/images/kamar/' .$kategori_kamar->gambar))) {
             unlink(public_path('assets/images/kamar/' . $kategori_kamar->gambar));
         }
 
         $kategori_kamar->delete();
-        return redirect('/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Dihapus');
+        if(Auth::user()->role == 'admin') {
+            return redirect('admin/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Dihapus');
+        } elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/kategori-kamar')->with('status', 'Data Kategori Kamar Berhasil Dihapus');
+        }
     }
 }

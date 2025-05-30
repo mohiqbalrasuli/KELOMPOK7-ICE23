@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kamar;
 use App\Models\kategori_kamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KamarController extends Controller
 {
@@ -33,7 +34,11 @@ class KamarController extends Controller
             'status'=> $request->status,
         ];
         kamar::create($data);
-        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Ditambahkan');
+        if(Auth::user()->role == 'admin') {
+            return redirect('admin/data-kamar')->with('success', 'Data Kamar Berhasil Ditambahkan');
+        }elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/data-kamar')->with('success', 'Data Kamar Berhasil Ditambahkan');
+        }
     }
 
     public function edit($id)
@@ -54,12 +59,20 @@ class KamarController extends Controller
             'status'=> $request->status,
         ];
         kamar::where('id', $id)->update($data);
-        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+        if(Auth::user()->role == 'admin') {
+            return redirect('admin/data-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+        }elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/data-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+        }
     }
     public function delete($id)
     {
         kamar::where('id', $id)->delete();
-        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Dihapus');
+        if(Auth::user()->role == 'admin') {
+            return redirect('admin/data-kamar')->with('success', 'Data Kamar Berhasil Dihapus');
+        }elseif(Auth::user()->role == 'staff_pengelola_kamar') {
+            return redirect('staff-kamar/data-kamar')->with('success', 'Data Kamar Berhasil Dihapus');
+        }
     }
 
     public function pesanan()
