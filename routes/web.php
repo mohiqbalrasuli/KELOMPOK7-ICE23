@@ -72,6 +72,13 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/metode-pembayaran/delete/{id}', [MetodePembayaranController::class, 'delete']);
     // data pembayaran
     Route::get('/data-pembayaran', [PembayaranController::class, 'index']);
+    // landing
+    Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
+    Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+    Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
+    Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
+    Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+    Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
 });
 Route::prefix('staff-kamar')-> middleware(['auth', 'staff_pengelola_kamar'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -98,6 +105,13 @@ Route::prefix('staff-kamar')-> middleware(['auth', 'staff_pengelola_kamar'])->gr
     Route::get('/kamar/delete/{id}', [KamarController::class, 'delete']);
     // pesanan kamar
     Route::get('/pesanan-kamar', [KamarController::class, 'pesanan']);
+     // landing
+     Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
+     Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+     Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
+     Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
+     Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
 });
 Route::prefix('staff-restoran')-> middleware(['auth', 'staff_pengelola_restoran'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -117,14 +131,24 @@ Route::prefix('staff-restoran')-> middleware(['auth', 'staff_pengelola_restoran'
     Route::get('/data-menu/delete/{id}', [MenuController::class, 'delete']);
     // pesanan menu
     Route::get('/pesanan-menu', [MenuController::class, 'pesanan']);
+     // landing
+     Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
+     Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+     Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
+     Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
+     Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
 });
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
     Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+    Route::get('/mybee-hotel&resto/room/room-singgle',[LandingController::class,'room_singgle']);
     Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
     Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
     Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+    Route::get('/mybee-hotel&resto/blog/blog-singgle',[LandingController::class,'blog_singgle']);
     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
+
 });
 // landing page
 Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);

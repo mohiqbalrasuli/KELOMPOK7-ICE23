@@ -37,14 +37,7 @@ class PenggunaController extends Controller
             'role' => $request->role,
         ];
         User::create($data);
-
-        if (Auth::user()->role === 'admin') {
-            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
-            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
-            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        }
+        return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -63,24 +56,13 @@ class PenggunaController extends Controller
             'role' => $request->role,
         ];
         User::where('id', $id)->update($data);
-        if (Auth::user()->role === 'admin') {
-            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
-            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
-            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
-        }
+        return redirect('admin/pengguna')->with('success', 'Pengguna berhasil ditambahkan');
     }
     public function delete($id)
     {
         $kategori_kamar = User::findOrFail($id);
         $kategori_kamar->delete();
-        if (Auth::user()->role === 'admin') {
-            return redirect('admin/pengguna')->with('success', 'Pengguna berhasil dihapus');
-        } elseif (Auth::user()->role === 'staff_pengelola_kamar') {
-            return redirect('staff-kamar/pengguna')->with('success', 'Pengguna berhasil dihapus');
-        } elseif (Auth::user()->role === 'staff_pengelola_restoran') {
-            return redirect('staff-restoran/pengguna')->with('success', 'Pengguna berhasil dihapus');
-        }
+        return redirect('admin/pengguna')->with('success', 'Pengguna berhasil dihapus');
+
     }
 }

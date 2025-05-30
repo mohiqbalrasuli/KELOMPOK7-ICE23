@@ -16,6 +16,11 @@ class LandingController extends Controller
         return view('user.rooms');
     }
 
+    public function room_singgle()
+    {
+        return view('user.room-singgle');
+    }
+
     public function restaurant()
     {
         return view('user.restaurant');
@@ -29,6 +34,11 @@ class LandingController extends Controller
     public function blog()
     {
         return view('user.blog');
+    }
+
+    public function blog_singgle()
+    {
+        return view('user.blog-singgle');
     }
 
     public function contact()

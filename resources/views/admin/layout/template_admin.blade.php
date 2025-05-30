@@ -144,6 +144,12 @@
                             <i class="ti ti-dashboard"></i>
                         </li>
                         <li class="pc-item">
+                            <a href="{{ url('staff-kamar/kategori-kamar') }}" class="pc-link">
+                                <span class="pc-micon"><i class="ti ti-bed"></i></span>
+                                <span class="pc-mtext">Kategori Kamar</span>
+                            </a>
+                        </li>
+                        <li class="pc-item">
                             <a href="{{ url('staff-kamar/data-kamar') }}" class="pc-link">
                                 <span class="pc-micon"><i class="ti ti-bed"></i></span>
                                 <span class="pc-mtext">Data Kamar</span>
@@ -175,6 +181,12 @@
                         <li class="pc-item pc-caption">
                             <label>Restoran</label>
                             <i class="ti ti-news"></i>
+                        </li>
+                        <li class="pc-item">
+                            <a href="{{ url('admin/kategori-menu') }}" class="pc-link">
+                                <span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span>
+                                <span class="pc-mtext">Kategori Menu</span>
+                            </a>
                         </li>
                         <li class="pc-item">
                             <a href="{{ url('staff-restoran/data-menu') }}" class="pc-link">
@@ -246,10 +258,22 @@
             <div class="ms-auto">
                 <ul class="list-unstyled">
                     <li class="pc-h-item">
-                        <a href="/mybee-hotel&resto" title="Ke Halaman Utama" class="pc-head-link" href="#"
+                        @if (auth()->user()->role === 'admin')
+                        <a href="{{ url('admin/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
                             role="button">
                             <i class="ti ti-brand-chrome"></i>
                         </a>
+                        @elseif(auth()->user()->role==='staff_pengelola_kamar')
+                        <a href="{{ url('staff-kamar/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
+                            role="button">
+                            <i class="ti ti-brand-chrome"></i>
+                        </a>
+                        @elseif (auth()->user()->role==='staff_pengelola_restoran')
+                        <a href="{{ url('staff-restoran/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
+                            role="button">
+                            <i class="ti ti-brand-chrome"></i>
+                        </a>
+                        @endif
                     </li>
                     <li class="dropdown pc-h-item">
                         <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown"
@@ -347,7 +371,7 @@
                                         <h6 class="mb-1">{{ Auth::user()->name }}</h6>
                                         <span>{{ Auth::user()->role }}</span>
                                     </div>
-                                    <a href="#!" class="pc-head-link bg-transparent"><i
+                                    <a href="/logout" class="pc-head-link bg-transparent"><i
                                             class="ti ti-power text-danger"></i></a>
                                 </div>
                             </div>

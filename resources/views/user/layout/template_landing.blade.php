@@ -53,24 +53,83 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
+            @if (auth()->user()->role==='admin')
             <li class="nav-item active">
-              <a href="/mybee-hotel&resto" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="/mybee-hotel&resto/rooms" class="nav-link">Our Rooms</a>
-            </li>
-            <li class="nav-item">
-              <a href="/mybee-hotel&resto/restaurant" class="nav-link">Restaurant</a>
-            </li>
-            <li class="nav-item">
-              <a href="/mybee-hotel&resto/about" class="nav-link">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="/mybee-hotel&resto/blog" class="nav-link">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="/mybee-hotel&resto/contact" class="nav-link">Contact</a>
-            </li>
+                <a href="{{ url('admin/mybee-hotel&resto') }}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/mybee-hotel&resto/rooms') }}" class="nav-link">Our Rooms</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/mybee-hotel&resto/restaurant') }}" class="nav-link">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/mybee-hotel&resto/about') }}" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/mybee-hotel&resto/blog') }}" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/mybee-hotel&resto/contact') }}" class="nav-link">Contact</a>
+              </li>
+            @elseif (auth()->user()->role==='staff_pengelola_kamar')
+            <li class="nav-item active">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto') }}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto/rooms') }}" class="nav-link">Our Rooms</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto/restaurant') }}" class="nav-link">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto/about') }}" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto/blog') }}" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-kamar/mybee-hotel&resto/contact') }}" class="nav-link">Contact</a>
+              </li>
+            @elseif (auth()->user()->role==='staff_pengelola_restoran')
+            <li class="nav-item active">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto') }}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto/rooms') }}" class="nav-link">Our Rooms</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto/restaurant') }}" class="nav-link">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto/about') }}" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto/blog') }}" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('staff-restoran/mybee-hotel&resto/contact') }}" class="nav-link">Contact</a>
+              </li>
+            @else
+            <li class="nav-item active">
+                <a href="/mybee-hotel&resto" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="/mybee-hotel&resto/rooms" class="nav-link">Our Rooms</a>
+              </li>
+              <li class="nav-item">
+                <a href="/mybee-hotel&resto/restaurant" class="nav-link">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a href="/mybee-hotel&resto/about" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="/mybee-hotel&resto/blog" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="/mybee-hotel&resto/contact" class="nav-link">Contact</a>
+              </li>
+            @endif
           </ul>
         </div>
       </div>
@@ -82,6 +141,13 @@
                     <span>{{ auth()->user()->name }}</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="userDropdown">
+                    @if (auth()->user()->role==='admin')
+                    <a class="dropdown-item" href="{{ url('admin/dashboard') }}">Dashboard</a>
+                    @elseif (auth()->user()->role==='staff_pengelola_kamar')
+                    <a class="dropdown-item" href="{{ url('staff-kamar/dashboard') }}">Dashboard</a>
+                    @elseif (auth()->user()->role==='staff_pengelola_restoran')
+                    <a class="dropdown-item" href="{{ url('staff-restoran/dashboard') }}">Dashboard</a>
+                    @endif
                     <a class="dropdown-item" href="/mybee-hotel&resto/profile">Profile</a>
                     <a class="dropdown-item" href="/mybee-hotel&resto/orders">My Orders</a>
                     <div class="dropdown-divider"></div>
@@ -190,31 +256,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
-    </div>
 
     <script src="{{ asset('/assets/landing/js/jquery.min.js') }}"></script>
     <script src="{{ asset('/assets/landing/js/jquery-migrate-3.0.1.min.js') }}"></script>

@@ -52,8 +52,8 @@
                       <td>{{ $value->email }}</td>
                       <td>{{ $value->role }}</td>
                       <td>
-                        <a href="/pengguna/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/pengguna/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('admin/pengguna/edit/'. $value->id ) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/pengguna/delete/'. $value->id ) }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                     @endforeach
@@ -86,8 +86,8 @@
                       <td>{{ $value->email }}</td>
                       <td>{{ $value->role }}</td>
                       <td>
-                        <a href="/pengguna/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/pengguna/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('admin/pengguna/edit/'. $value->id ) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/pengguna/delete/'. $value->id ) }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                     @endforeach
@@ -120,8 +120,8 @@
                       <td>{{ $value->email }}</td>
                       <td>{{ $value->role }}</td>
                       <td>
-                        <a href="/pengguna/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/pengguna/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('admin/pengguna/edit/'. $value->id ) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/pengguna/delete/'. $value->id ) }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                     @endforeach
@@ -154,8 +154,8 @@
                       <td>{{ $value->email }}</td>
                       <td>{{ $value->role }}</td>
                       <td>
-                        <a href="/pengguna/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
-                        <a href="/pengguna/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('admin/pengguna/edit/'. $value->id ) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/pengguna/delete/'. $value->id ) }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                     @endforeach
