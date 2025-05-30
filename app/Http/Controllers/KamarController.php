@@ -2,23 +2,64 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kamar;
+use App\Models\kategori_kamar;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
 {
     public function index()
     {
-        return view('admin.bagian-kamar.kamar.data-kamar');
+        $kamar = [
+            'kamar' => kamar::with('kategori_kamar')->get(),
+        ];
+        return view('admin.bagian-kamar.kamar.data-kamar', $kamar);
     }
 
     public function create()
     {
-        return view('admin.bagian-kamar.kamar.tambah-kamar');
+        $kamar = [
+            'kategori_kamar' => kategori_kamar::all(),
+        ];
+        return view('admin.bagian-kamar.kamar.tambah-kamar', $kamar);
     }
 
-    public function edit()
+    public function store(Request $request)
     {
-        return view('admin.bagian-kamar.kamar.edit-kamar');
+        $data=[
+            'nomer_kamar'=> $request->nomer_kamar,
+            'kategori_kamar_id'=> $request->kategori_kamar_id,
+            'lantai'=> $request->lantai,
+            'status'=> $request->status,
+        ];
+        kamar::create($data);
+        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $kamar = [
+            'kategori_kamar' => kategori_kamar::all(),
+            'kamar' => kamar::with('kategori_kamar')->findOrFail($id),
+        ];
+        return view('admin.bagian-kamar.kamar.edit-kamar', $kamar);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data=[
+            'nomer_kamar'=> $request->nomer_kamar,
+            'kategori_kamar_id'=> $request->kategori_kamar_id,
+            'lantai'=> $request->lantai,
+            'status'=> $request->status,
+        ];
+        kamar::where('id', $id)->update($data);
+        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Diubah');
+    }
+    public function delete($id)
+    {
+        kamar::where('id', $id)->delete();
+        return redirect('/data-kamar')->with('success', 'Data Kamar Berhasil Dihapus');
     }
 
     public function pesanan()

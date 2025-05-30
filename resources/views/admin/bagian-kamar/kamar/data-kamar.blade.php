@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Kamar</h3>
-                <a href="/tambah-kamar" class="btn btn-primary" >
+                <a href="/kamar/create" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Kamar</a>
               </div>
@@ -45,39 +45,19 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($kamar as $key => $value)
                     <tr>
-                      <td>1</td>
-                      <td>101</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
+                      <td>{{ $key + 1 }}</td>
+                      <td>{{ $value->nomer_kamar }}</td>
+                      <td>{{ $value->kategori_kamar->nama_kategori }}</td>
+                      <td>{{ $value->lantai }}</td>
+                      <td>{{ $value->status }}</td>
                       <td>
-                        <a href="/edit-kamar" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
+                        <a href="/kamar/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
+                        <a href="/kamar/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>102</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
-                      <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>103</td>
-                      <td>VIP</td>
-                      <td>1</td>
-                      <td>Tersedia</td>
-                      <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                      </td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

@@ -27,7 +27,7 @@
         <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <form action="/pengguna/store" method="POST">
+                <form action="{{ url('admin/pengguna/store') }}" method="POST">
                     @csrf
                   <div class="form-group">
                     <label class="form-label" for="exampleInputName">Nama Pengguna</label>
@@ -47,8 +47,8 @@
                     <select class="mb-0 form-select" name="role" id="exampleInputRole">
                         <option selected disabled>--Pilih Role--</option>
                         <option value="admin">Admin</option>
-                        <option value="staff pengelola kamar">Staff Hotel</option>
-                        <option value="staff pengelola restoran">Staff Restoran</option>
+                        <option value="staff_pengelola_kamar">Staff Hotel</option>
+                        <option value="staff_pengelola_restoran">Staff Restoran</option>
                     </select>
                   </div>
                   <button type="submit" class="btn btn-primary mb-4">Simpan</button>

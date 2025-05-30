@@ -27,16 +27,16 @@
         <div class="card-body">
             <div class="row">
               <div class="col-md-12">
-                <form>
+                <form action="/kategori-menu/update/{{ $kategori_menu->id }}" method="POST">
                     @csrf
                   <div class="form-group">
                     <label class="form-label" for="exampleInputName">Nama Kategori</label>
-                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                    <input type="text" name="nama_kategori_menu" value="{{ $kategori_menu->nama_kategori_menu }}" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
                       placeholder="Masukkan Nama Kategori">
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="exampleInputDeskripsi">Deskripsi</label>
-                    <input type="text" class="form-control" id="exampleInputDeskripsi" placeholder="Masukkan Deskripsi">
+                    <input type="text" name="deskripsi" value="{{ $kategori_menu->deskripsi }}" class="form-control" id="exampleInputDeskripsi" placeholder="Masukkan Deskripsi">
                   </div>
                   <button type="submit" class="btn btn-primary mb-4">Simpan</button>
                 </form>

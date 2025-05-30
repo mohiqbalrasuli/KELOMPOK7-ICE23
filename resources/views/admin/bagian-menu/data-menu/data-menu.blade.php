@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Menu</h3>
-                <a href="/tambah-menu" class="btn btn-primary" >
+                <a href="/data-menu/create" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Menu</a>
               </div>
@@ -37,6 +37,7 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                        <th>Gambar</th>
                       <th>Nama Menu</th>
                       <th>Kategori Menu</th>
                       <th>Harga</th>
@@ -45,14 +46,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1</td>
-                      <td>Nasi Goreng</td>
-                      <td>Makanan</td>
-                      <td>Rp. 10.000</td>
+                      @foreach ($menu as $key => $value)
+                      <td>{{ $key + 1 }}</td>
+                      <td><img src="{{ asset('assets/images/menu/' .$value->gambar) }}" alt="{{ $value->nama_menu }}" width="100px"></td>
+                      <td>{{ $value->nama_menu }}</td>
+                      <td>{{ $value->kategori_menu->nama_kategori_menu }}</td>
+                      <td>{{ $value->harga }}</td>
                       <td>
-                        <a href="/edit-menu" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Hapus</a>
-                      </td>
+                        <a href="/data-menu/edit/{{ $value->id }}" class="btn btn-primary">Edit</a>
+                        <a href="/data-menu/delete/{{ $value->id }}" class="btn btn-danger">Hapus</a>
+
+                      @endforeach
                     </tr>
                   </tbody>
                 </table>

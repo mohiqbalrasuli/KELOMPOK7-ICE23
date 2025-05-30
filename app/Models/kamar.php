@@ -6,11 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class kamar extends Model
 {
-    protected $table = 'kamar';
+    protected $table = 'table_kamar';
     protected $fillable = [
-        'nomor_kamar',
+        'nomer_kamar',
         'kategori_kamar_id',
         'lantai',
         'status',
     ];
+
+    public function kategori_kamar()
+    {
+        return $this->belongsTo(kategori_kamar::class, 'kategori_kamar_id');
+    }
 }

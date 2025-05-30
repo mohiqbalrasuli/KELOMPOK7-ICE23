@@ -27,30 +27,32 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form>
+                    <form action="/kamar/store" method="POST">
                         @csrf
                       <div class="form-group">
                         <label class="form-label" for="exampleInputName">Nomor Kamar</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                          placeholder="Masukkan Nama Kategori">
+                        <input type="number" name="nomer_kamar" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                          placeholder="Masukkan Nomor Kamar">
                       </div>
                       <div class="form-group">
-                        <label class="form-label" for="exampleInputStatus">Status</label>
-                        <select class="mb-0 form-select">
-                            <option>VIP</option>
-                            <option>Reguler</option>
+                        <label class="form-label" for="exampleInputStatus">Kategori Kamar</label>
+                        <select class="mb-0 form-select" name="kategori_kamar_id">
+                            <option selected disabled>--Pilih Kategori--</option>
+                            @foreach ($kategori_kamar as $item)
+                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                            @endforeach
                         </select>
                       </div>
                       <div class="form-group">
-                        <label class="form-label" for="exampleInputDeskripsi">Deskripsi</label>
-                        <input type="text" class="form-control" id="exampleInputDeskripsi" placeholder="Masukkan Deskripsi">
+                        <label class="form-label" for="exampleInputlantai">Lantai</label>
+                        <input type="number" name="lantai" class="form-control" id="exampleInputlantai" placeholder="Masukkan Nomor Lantai">
                       </div>
                       <div class="form-group">
                         <label class="form-label" for="exampleInputStatus">Status</label>
-                        <select class="mb-0 form-select">
-                            <option>Tersedia</option>
-                            <option>Di Booking</option>
-                            <option>Perbaikan</option>
+                        <select class="mb-0 form-select" name="status">
+                            <option selected disabled>--Status--</option>
+                            <option value="tersedia">Tersedia</option>
+                            <option value="tidak_tersedia">Tidak Tersedia</option>
                         </select>
                       </div>
                       <button type="submit" class="btn btn-primary mb-4">Simpan</button>
