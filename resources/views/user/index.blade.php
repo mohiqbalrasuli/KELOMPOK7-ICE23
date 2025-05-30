@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mybee Hotel & Restaurant</title>
+    <title>Firyalicious Hotel & Restaurant</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -37,7 +37,7 @@
       id="ftco-navbar"
     >
       <div class="container">
-        <a class="navbar-brand" href="index.html">Mybee Hotel<span> & Restaurant</span></a>
+        <a class="navbar-brand" href="index.html">Firyalicious Hotel<span> & Restaurant</span></a>
         <button
           class="navbar-toggler"
           type="button"
