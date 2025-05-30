@@ -53,6 +53,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
+            @auth
             @if (auth()->user()->role==='admin')
             <li class="nav-item active">
                 <a href="{{ url('admin/mybee-hotel&resto') }}" class="nav-link">Home</a>
@@ -110,7 +111,7 @@
               <li class="nav-item">
                 <a href="{{ url('staff-restoran/mybee-hotel&resto/contact') }}" class="nav-link">Contact</a>
               </li>
-            @else
+            @elseif (auth()->user()->role==='user')
             <li class="nav-item active">
                 <a href="/mybee-hotel&resto" class="nav-link">Home</a>
               </li>
@@ -129,7 +130,9 @@
               <li class="nav-item">
                 <a href="/mybee-hotel&resto/contact" class="nav-link">Contact</a>
               </li>
-            @endif
+              @endif
+            @endauth
+            
           </ul>
         </div>
       </div>

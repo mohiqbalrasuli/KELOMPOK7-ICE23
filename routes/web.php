@@ -13,7 +13,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\LandingController;
 
 Route::get('/', function () {
-    return view('login-register.login');
+    return view('user.index');
 });
 // login-register
 Route::get('/login', [AuthController::class, 'ShowLogin'])->name('login');
@@ -41,7 +41,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // data kamar
     Route::get('/data-kamar', [KamarController::class, 'index']);
     Route::get('/kamar/create', [KamarController::class, 'create']);
-    Route::post('/kamar/store', [KamarController::class, 'store']);
+    Route::post('/kamar/store', action: [KamarController::class, 'store']);
     Route::get('/kamar/edit/{id}', [KamarController::class, 'edit']);
     Route::post('/kamar/update/{id}', [KamarController::class, 'update']);
     Route::get('/kamar/delete/{id}', [KamarController::class, 'delete']);

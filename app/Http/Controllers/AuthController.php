@@ -102,7 +102,15 @@ class AuthController extends Controller
             $request->session()->invalidate();
             $request->session()->regenerateToken();
 
-            return redirect('/login')->with('message', 'Berhasil logout');
+            if ($role == 'admin') {
+                return redirect('/login')->with('message', 'Berhasil logout');
+            } elseif ($role == 'staff_pengelola_kamar') {
+                return redirect('/login')->with('message', 'Berhasil logout');
+            } elseif ($role == 'staff_pengelola_restoran') {
+                return redirect('/login')->with('message', 'Berhasil logout');
+            }else {
+                return redirect('/mybee-hotel&resto')->with('message', 'Berhasil logout');
+            }
         } catch (\Exception $e) {
             return redirect('/login');
         }
