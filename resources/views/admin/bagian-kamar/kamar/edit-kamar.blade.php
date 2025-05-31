@@ -27,8 +27,13 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="/kamar/update/{{ $kamar->id }}" method="POST">
-                        @csrf
+                    @if (auth()->user()->role==='admin')
+                    <form action="{{ url('admin/kamar/update/'.$kamar->id) }}" method="POST">
+                    @csrf
+                    @elseif (auth()->user()->role==='staff_pengelola_kamar')
+                    <form action="{{ url('staff-kamar/kamar/update/'.$kamar->id) }}" method="POST">
+                    @csrf
+                    @endif
                       <div class="form-group">
                         <label class="form-label" for="exampleInputName">Nomor Kamar</label>
                         <input type="number" value="{{ $kamar->nomer_kamar }}" name="nomer_kamar" class="form-control" id="exampleInputName" aria-describedby="emailHelp"

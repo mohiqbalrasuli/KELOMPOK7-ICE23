@@ -53,7 +53,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                                <h4 class="mb-3">Rp 8.5 Jt <span class="badge bg-light-danger border border-danger"><i
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
                                             class="ti ti-trending-up"></i> 25%</span></h4>
                                 <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
                                 </p>
@@ -64,7 +64,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                                <h4 class="mb-3">1.000.000 <span class="badge bg-light-warning border border-warning"><i
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-warning border border-warning"><i
                                             class="ti ti-trending-up"></i> 12%</span></h4>
                                 <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
                             </div>
@@ -118,7 +118,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                                <h4 class="mb-3">Rp 8.5 Jt <span class="badge bg-light-danger border border-danger"><i
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
                                             class="ti ti-trending-up"></i> 25%</span></h4>
                                 <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
                                 </p>
@@ -129,7 +129,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                                <h4 class="mb-3">Rp 8.5 Jt <span class="badge bg-light-danger border border-danger"><i
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-danger border border-danger"><i
                                             class="ti ti-trending-up"></i> 25%</span></h4>
                                 <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
                                 </p>
@@ -146,59 +146,26 @@
                                     <table class="table table-hover table-borderless mb-0">
                                         <thead>
                                             <tr>
-                                                <th>NO. KAMAR/MEJA</th>
+                                                <th>NO. KAMAR</th>
                                                 <th>NAMA TAMU</th>
-                                                <th>JENIS PESANAN</th>
+                                                <th>TANGGAL CHEK-IN</th>
                                                 <th>STATUS</th>
                                                 <th class="text-end">TOTAL</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($pesanan_kamar_terbaru as $value )
                                             <tr>
-                                                <td><a href="#" class="text-muted">Kamar 101</a></td>
-                                                <td>John Doe</td>
-                                                <td>Check-in</td>
+                                                <td><a href="#" class="text-muted">{{ $value->kamar->nomer_kamar }}</a></td>
+                                                <td>{{ $value->user->name }}</td>
+                                                <td>{{ $value->tanggal_chekin }}</td>
                                                 <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-success f-10 m-r-5"></i>Check-in</span>
+                                                    class="fas fa-circle text-success f-10 m-r-5"></i>{{ $value->status }}</span>
                                                 </td>
-                                                <td class="text-end">Rp 1.5 Jt</td>
+                                                <td class="text-end">{{ $value->total_harga }}</td>
                                             </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Meja 12</a></td>
-                                                <td>Jane Smith</td>
-                                                <td>Restoran</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-warning f-10 m-r-5"></i>Menunggu</span>
-                                                </td>
-                                                <td class="text-end">Rp 450.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Kamar 203</a></td>
-                                                <td>Mike Johnson</td>
-                                                <td>Room Service</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-success f-10 m-r-5"></i>Selesai</span>
-                                                </td>
-                                                <td class="text-end">Rp 350.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Meja 8</a></td>
-                                                <td>Sarah Wilson</td>
-                                                <td>Restoran</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-danger f-10 m-r-5"></i>Dibatalkan</span>
-                                                </td>
-                                                <td class="text-end">Rp 0</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Kamar 305</a></td>
-                                                <td>David Brown</td>
-                                                <td>Check-out</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-warning f-10 m-r-5"></i>Proses</span>
-                                                </td>
-                                                <td class="text-end">Rp 2.1 Jt</td>
-                                            </tr>
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -231,59 +198,25 @@
                                     <table class="table table-hover table-borderless mb-0">
                                         <thead>
                                             <tr>
-                                                <th>NO. KAMAR/MEJA</th>
+                                                <th>NO. MEJA</th>
                                                 <th>NAMA TAMU</th>
-                                                <th>JENIS PESANAN</th>
+                                                <th>JENIS MENU</th>
                                                 <th>STATUS</th>
                                                 <th class="text-end">TOTAL</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($pesanan_menu_terbaru as $value )
                                             <tr>
-                                                <td><a href="#" class="text-muted">Kamar 101</a></td>
-                                                <td>John Doe</td>
-                                                <td>Check-in</td>
+                                                <td><a href="#" class="text-muted">{{ $value->kursi }}</a></td>
+                                                <td>{{ $value->user->name }}</td>
+                                                <td>{{ $value->menu->nama_menu }}</td>
                                                 <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-success f-10 m-r-5"></i>Check-in</span>
+                                                    class="fas fa-circle text-success f-10 m-r-5"></i>{{ $value->status }}</span>
                                                 </td>
-                                                <td class="text-end">Rp 1.5 Jt</td>
+                                                <td class="text-end">Rp {{ $value->total_harga }}</td>
                                             </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Meja 12</a></td>
-                                                <td>Jane Smith</td>
-                                                <td>Restoran</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-warning f-10 m-r-5"></i>Menunggu</span>
-                                                </td>
-                                                <td class="text-end">Rp 450.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Kamar 203</a></td>
-                                                <td>Mike Johnson</td>
-                                                <td>Room Service</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-success f-10 m-r-5"></i>Selesai</span>
-                                                </td>
-                                                <td class="text-end">Rp 350.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Meja 8</a></td>
-                                                <td>Sarah Wilson</td>
-                                                <td>Restoran</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-danger f-10 m-r-5"></i>Dibatalkan</span>
-                                                </td>
-                                                <td class="text-end">Rp 0</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#" class="text-muted">Kamar 305</a></td>
-                                                <td>David Brown</td>
-                                                <td>Check-out</td>
-                                                <td><span class="d-flex align-items-center gap-2"><i
-                                                            class="fas fa-circle text-warning f-10 m-r-5"></i>Proses</span>
-                                                </td>
-                                                <td class="text-end">Rp 2.1 Jt</td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -378,95 +311,61 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                        <h4 class="mb-3">Rp 8.5 Jt <span class="badge bg-light-danger border border-danger"><i
-                                    class="ti ti-trending-up"></i> 25%</span></h4>
-                        <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                        <h4 class="mb-3">1.000.000 <span class="badge bg-light-warning border border-warning"><i
-                                    class="ti ti-trending-up"></i> 12%</span></h4>
-                        <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-xl-8">
-                <h5 class="mb-3">Pesanan Kamar Terbaru</h5>
-                <div class="card tbl-card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-borderless mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>NO. KAMAR/MEJA</th>
-                                        <th>NAMA TAMU</th>
-                                        <th>JENIS PESANAN</th>
-                                        <th>STATUS</th>
-                                        <th class="text-end">TOTAL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 101</a></td>
-                                        <td>John Doe</td>
-                                        <td>Check-in</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-success f-10 m-r-5"></i>Check-in</span>
-                                        </td>
-                                        <td class="text-end">Rp 1.5 Jt</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Meja 12</a></td>
-                                        <td>Jane Smith</td>
-                                        <td>Restoran</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-warning f-10 m-r-5"></i>Menunggu</span>
-                                        </td>
-                                        <td class="text-end">Rp 450.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 203</a></td>
-                                        <td>Mike Johnson</td>
-                                        <td>Room Service</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-success f-10 m-r-5"></i>Selesai</span>
-                                        </td>
-                                        <td class="text-end">Rp 350.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Meja 8</a></td>
-                                        <td>Sarah Wilson</td>
-                                        <td>Restoran</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-danger f-10 m-r-5"></i>Dibatalkan</span>
-                                        </td>
-                                        <td class="text-end">Rp 0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 305</a></td>
-                                        <td>David Brown</td>
-                                        <td>Check-out</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-warning f-10 m-r-5"></i>Proses</span>
-                                        </td>
-                                        <td class="text-end">Rp 2.1 Jt</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
+                                            class="ti ti-trending-up"></i> 25%</span></h4>
+                                <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-warning border border-warning"><i
+                                            class="ti ti-trending-up"></i> 12%</span></h4>
+                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
+                            </div>
+                        </div>
+                    </div>
+        <div class="row">
+            <div class="col-md-12 col-xl-8">
+                        <h5 class="mb-3">Pesanan Kamar Terbaru</h5>
+                        <div class="card tbl-card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-borderless mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>NO. KAMAR</th>
+                                                <th>NAMA TAMU</th>
+                                                <th>TANGGAL CHEK-IN</th>
+                                                <th>STATUS</th>
+                                                <th class="text-end">TOTAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($pesanan_kamar_terbaru as $value )
+                                            <tr>
+                                                <td><a href="#" class="text-muted">{{ $value->kamar->nomer_kamar }}</a></td>
+                                                <td>{{ $value->user->name }}</td>
+                                                <td>{{ $value->tanggal_chekin }}</td>
+                                                <td><span class="d-flex align-items-center gap-2"><i
+                                                    class="fas fa-circle text-success f-10 m-r-5"></i>{{ $value->status }}</span>
+                                                </td>
+                                                <td class="text-end">{{ $value->total_harga }}</td>
+                                            </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             <div class="col-md-12 col-xl-4">
                 <h5 class="mb-3">Laporan Analisis</h5>
                 <div class="card">
@@ -544,72 +443,38 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-xl-8">
-                <h5 class="mb-3">Pesanan Menu Terbaru</h5>
-                <div class="card tbl-card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-borderless mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>NO. KAMAR/MEJA</th>
-                                        <th>NAMA TAMU</th>
-                                        <th>JENIS PESANAN</th>
-                                        <th>STATUS</th>
-                                        <th class="text-end">TOTAL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 101</a></td>
-                                        <td>John Doe</td>
-                                        <td>Check-in</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-success f-10 m-r-5"></i>Check-in</span>
-                                        </td>
-                                        <td class="text-end">Rp 1.5 Jt</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Meja 12</a></td>
-                                        <td>Jane Smith</td>
-                                        <td>Restoran</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-warning f-10 m-r-5"></i>Menunggu</span>
-                                        </td>
-                                        <td class="text-end">Rp 450.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 203</a></td>
-                                        <td>Mike Johnson</td>
-                                        <td>Room Service</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-success f-10 m-r-5"></i>Selesai</span>
-                                        </td>
-                                        <td class="text-end">Rp 350.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Meja 8</a></td>
-                                        <td>Sarah Wilson</td>
-                                        <td>Restoran</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-danger f-10 m-r-5"></i>Dibatalkan</span>
-                                        </td>
-                                        <td class="text-end">Rp 0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="text-muted">Kamar 305</a></td>
-                                        <td>David Brown</td>
-                                        <td>Check-out</td>
-                                        <td><span class="d-flex align-items-center gap-2"><i
-                                                    class="fas fa-circle text-warning f-10 m-r-5"></i>Proses</span>
-                                        </td>
-                                        <td class="text-end">Rp 2.1 Jt</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <h5 class="mb-3">Pesanan Menu Terbaru</h5>
+                        <div class="card tbl-card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-borderless mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>NO. MEJA</th>
+                                                <th>NAMA TAMU</th>
+                                                <th>JENIS MENU</th>
+                                                <th>STATUS</th>
+                                                <th class="text-end">TOTAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($pesanan_menu_terbaru as $value )
+                                            <tr>
+                                                <td><a href="#" class="text-muted">{{ $value->kursi }}</a></td>
+                                                <td>{{ $value->user->name }}</td>
+                                                <td>{{ $value->menu->nama_menu }}</td>
+                                                <td><span class="d-flex align-items-center gap-2"><i
+                                                    class="fas fa-circle text-success f-10 m-r-5"></i>{{ $value->status }}</span>
+                                                </td>
+                                                <td class="text-end">Rp {{ $value->total_harga }}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
             <div class="col-md-12 col-xl-4">
                 <h5 class="mb-3">Riwayat Transaksi</h5>
                 <div class="card">

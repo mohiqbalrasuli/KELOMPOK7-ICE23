@@ -28,11 +28,11 @@
             <div class="card-header" style="display: flex; justify-content:space-between">
                 <h3>Data Menu</h3>
                 @if (auth()->user()->role === 'admin')
-                <a href="{{ url('admin/menu/create') }}" class="btn btn-primary" >
+                <a href="{{ url('admin/data-menu/create') }}" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Menu</a>
                 @elseif (auth()->user()->role === 'staff_pengelola_restoran')
-                <a href="{{ url('staff-restoran/menu/create') }}" class="btn btn-primary" >
+                <a href="{{ url('staff-restoran/data-menu/create') }}" class="btn btn-primary" >
                   <i class="ti ti-circle-plus"></i>
                   Tambah Menu</a>
                 @endif
@@ -51,8 +51,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
                       @foreach ($menu as $key => $value)
+                      <tr>
                       <td>{{ $key + 1 }}</td>
                       <td><img src="{{ asset('assets/images/menu/' .$value->gambar) }}" alt="{{ $value->nama_menu }}" width="100px"></td>
                       <td>{{ $value->nama_menu }}</td>
@@ -66,9 +66,9 @@
                         <a href="{{ url('staff-restoran/menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
                         <a href="{{ url('staff-restoran/menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
                         @endif
-
+                        </tr>
                       @endforeach
-                    </tr>
+
                   </tbody>
                 </table>
               </div>

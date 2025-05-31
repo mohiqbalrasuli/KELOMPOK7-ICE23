@@ -57,7 +57,6 @@
             <div class="navbar-content">
                 <ul class="pc-navbar">
                     @if (auth()->user()->role === 'admin')
-
                         <li class="pc-item">
                             <a href="{{ url('admin/dashboard') }}" class="pc-link">
                                 <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
@@ -132,7 +131,7 @@
                                 <span class="pc-mtext">Data Pembayaran</span>
                             </a>
                         </li>
-                     @elseif (auth()->user()->role === 'staff_pengelola_kamar')
+                    @elseif (auth()->user()->role === 'staff_pengelola_kamar')
                         <li class="pc-item">
                             <a href="{{ url('staff-kamar/dashboard') }}" class="pc-link">
                                 <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
@@ -172,12 +171,12 @@
                             </a>
                         </li>
                     @elseif (auth()->user()->role === 'staff_pengelola_restoran')
-                    <li class="pc-item">
+                        <li class="pc-item">
                             <a href="{{ url('staff-restoran/dashboard') }}" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
-                            <span class="pc-mtext">Dashboard</span>
-                        </a>
-                    </li>
+                                <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+                                <span class="pc-mtext">Dashboard</span>
+                            </a>
+                        </li>
                         <li class="pc-item pc-caption">
                             <label>Restoran</label>
                             <i class="ti ti-news"></i>
@@ -259,20 +258,20 @@
                 <ul class="list-unstyled">
                     <li class="pc-h-item">
                         @if (auth()->user()->role === 'admin')
-                        <a href="{{ url('admin/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
-                            role="button">
-                            <i class="ti ti-brand-chrome"></i>
-                        </a>
-                        @elseif(auth()->user()->role==='staff_pengelola_kamar')
-                        <a href="{{ url('staff-kamar/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
-                            role="button">
-                            <i class="ti ti-brand-chrome"></i>
-                        </a>
-                        @elseif (auth()->user()->role==='staff_pengelola_restoran')
-                        <a href="{{ url('staff-restoran/mybee-hotel&resto') }}" title="Ke Halaman Utama" class="pc-head-link" href="#"
-                            role="button">
-                            <i class="ti ti-brand-chrome"></i>
-                        </a>
+                            <a href="{{ url('admin/mybee-hotel&resto') }}" title="Ke Halaman Utama"
+                                class="pc-head-link" href="#" role="button">
+                                <i class="ti ti-brand-chrome"></i>
+                            </a>
+                        @elseif(auth()->user()->role === 'staff_pengelola_kamar')
+                            <a href="{{ url('staff-kamar/mybee-hotel&resto') }}" title="Ke Halaman Utama"
+                                class="pc-head-link" href="#" role="button">
+                                <i class="ti ti-brand-chrome"></i>
+                            </a>
+                        @elseif (auth()->user()->role === 'staff_pengelola_restoran')
+                            <a href="{{ url('staff-restoran/mybee-hotel&resto') }}" title="Ke Halaman Utama"
+                                class="pc-head-link" href="#" role="button">
+                                <i class="ti ti-brand-chrome"></i>
+                            </a>
                         @endif
                     </li>
                     <li class="dropdown pc-h-item">
@@ -290,60 +289,26 @@
                             <div class="dropdown-header px-0 text-wrap header-notification-scroll position-relative"
                                 style="max-height: calc(100vh - 215px)">
                                 <div class="list-group list-group-flush w-100">
-                                    <a class="list-group-item list-group-item-action">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="../assets/images/user/avatar-2.jpg" alt="user-image"
-                                                    class="user-avtar">
+                                    @foreach ($notifikasi as $value)
+                                        <a class="list-group-item list-group-item-action">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <img src="{{ asset('assets/images/user/avatar-1.jpg') }}"
+                                                        alt="user-image" class="user-avtar">
+                                                </div>
+                                                <div class="flex-grow-1 ms-1">
+                                                    <span
+                                                        class="float-end text-muted">{{ \Carbon\Carbon::parse($value->waktu)->format('g:i A') }}</span>
+                                                    <p class="text-body mb-1">
+                                                        <b>{{ $value->name }}</b> {{ $value->subjek }}
+                                                    </p>
+                                                    <span
+                                                        class="text-muted">{{ \Carbon\Carbon::parse($value->waktu)->format('j F') }}</span>
+                                                </div>
+
                                             </div>
-                                            <div class="flex-grow-1 ms-1">
-                                                <span class="float-end text-muted">3:00 AM</span>
-                                                <p class="text-body mb-1">It's <b>Cristina danny's</b> birthday today.
-                                                </p>
-                                                <span class="text-muted">2 min ago</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="{{ asset('assets/images/user/avatar-1.jpg') }}"
-                                                    alt="user-image" class="user-avtar">
-                                            </div>
-                                            <div class="flex-grow-1 ms-1">
-                                                <span class="float-end text-muted">6:00 PM</span>
-                                                <p class="text-body mb-1"><b>Aida Burg</b> commented your post.</p>
-                                                <span class="text-muted">5 August</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="{{ asset('assets/images/user/avatar-3.jpg') }}"
-                                                    alt="user-image" class="user-avtar">
-                                            </div>
-                                            <div class="flex-grow-1 ms-1">
-                                                <span class="float-end text-muted">2:45 PM</span>
-                                                <p class="text-body mb-1"><b>There was a failure to your setup.</b></p>
-                                                <span class="text-muted">7 hours ago</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0">
-                                                <img src="{{ asset('assets/images/user/avatar-4.jpg') }}"
-                                                    alt="user-image" class="user-avtar">
-                                            </div>
-                                            <div class="flex-grow-1 ms-1">
-                                                <span class="float-end text-muted">9:10 PM</span>
-                                                <p class="text-body mb-1"><b>Cristina Danny </b> invited to join <b>
-                                                        Meeting.</b></p>
-                                                <span class="text-muted">Daily scrum meeting time</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>

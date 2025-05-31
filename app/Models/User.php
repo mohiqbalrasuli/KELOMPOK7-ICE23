@@ -51,4 +51,12 @@ class User extends Authenticatable
         return $this->hasMany(contact::class,'user_id');
         return $this->hasMany(contact::class,'email_id');
     }
+    public function pesanan_kamar()
+    {
+        return $this->hasMany(pesanan_kamar::class, 'user_id');
+    }
+    public function pesanan_menu()
+    {
+        return $this->hasMany(pesanan_menu::class, 'user_id');
+    }
 }

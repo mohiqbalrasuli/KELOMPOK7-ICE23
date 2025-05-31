@@ -27,8 +27,14 @@
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="/kamar/store" method="POST">
-                        @csrf
+                    @if (auth()->user()->role==='admin')
+                    <form action="{{ url('admin/kamar/store') }}" method="POST">
+                    @csrf
+                    @elseif (auth()->user()->role==='staff_pengelola_kamar')
+                    <form action="{{ url('staff-kamar/kamar/store') }}" method="POST">
+                    @csrf
+                    @endif
+
                       <div class="form-group">
                         <label class="form-label" for="exampleInputName">Nomor Kamar</label>
                         <input type="number" name="nomer_kamar" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
