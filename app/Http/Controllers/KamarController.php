@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kamar;
 use App\Models\kategori_kamar;
+use App\Models\pesanan_kamar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,8 +76,5 @@ class KamarController extends Controller
         }
     }
 
-    public function pesanan()
-    {
-        return view('admin.bagian-kamar.pesanan_kamar.pesanan_kamar');
-    }
+    
 }

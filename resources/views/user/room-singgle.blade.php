@@ -7,9 +7,9 @@
             <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
                     <div class="text">
-                        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home</a></span> <span
-                                class="mr-2"><a href="rooms.html">Rooms</a></span> <span>Rooms Single</span></p>
-                        <h1 class="mb-4 bread">Rooms Details</h1>
+                        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Beranda</a></span> <span
+                                class="mr-2"><a href="rooms.html">Kamar</a></span> <span>Detail Kamar</span></p>
+                        <h1 class="mb-4 bread">Detail Kamar</h1>
                     </div>
                 </div>
             </div>
@@ -29,11 +29,11 @@
                             </div>
                         </div>
                         <div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
-                            <h2 class="mb-4">{{ $kategori_kamar->nama_kategori }} <span>- ({{ $jumlah_kamar }} Available rooms)</span></h2>
+                            <h2 class="mb-4">{{ $kategori_kamar->nama_kategori }} <span>- ({{ $jumlah_kamar }} Kamar Tersedia)</span></h2>
                             <p>{{ $kategori_kamar->deskripsi }}</p>
                             <div class="d-md-flex mt-5 mb-5">
                                 <ul class="list">
-                                    <li><span>Kapasitas:</span> {{ $kategori_kamar->kapasitas }} Persons</li>
+                                    <li><span>Kapasitas:</span> {{ $kategori_kamar->kapasitas }} Orang</li>
                                     <li><span>Harga:</span> {{ $kategori_kamar->harga }}</li>
                                 </ul>
                                 <ul class="list ml-md-5">

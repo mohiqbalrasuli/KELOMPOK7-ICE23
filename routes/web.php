@@ -11,9 +11,10 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MetodePembayaranController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\pesananController;
 
 Route::get('/', function () {
-    return view('user.index');
+    return redirect('/mybee-hotel&resto');
 });
 // login-register
 Route::get('/login', [AuthController::class, 'ShowLogin'])->name('login');
@@ -48,7 +49,7 @@ Route::prefix('admin')
         Route::post('/kamar/update/{id}', [KamarController::class, 'update']);
         Route::get('/kamar/delete/{id}', [KamarController::class, 'delete']);
         // pesanan kamar
-        Route::get('/pesanan-kamar', [KamarController::class, 'pesanan']);
+        Route::get('/pesanan-kamar', [pesananController::class, 'pesanan']);
         // kategori menu
         Route::get('/kategori-menu', [KategoriMenuController::class, 'index']);
         Route::get('/kategori-menu/create', [KategoriMenuController::class, 'create']);
@@ -83,6 +84,14 @@ Route::prefix('admin')
         Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
         Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
         Route::post('/mybee-hotel&resto/contact/store', [LandingController::class, 'sendMessege']);
+        // pemesanan kamr
+        Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar/delete{id}',[LandingController::class,'delete_pesanan_kamar']);
+        // pesanan menu
+        Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
+        Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+        Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::prefix('staff-kamar')
     ->middleware(['auth', 'staff_pengelola_kamar'])
@@ -120,6 +129,14 @@ Route::prefix('staff-kamar')
         Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
         Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
         Route::post('/mybee-hotel&resto/contact/store', [LandingController::class, 'sendMessege']);
+        // pemesanan kamr
+        Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar/delete/{id}',[LandingController::class,'delete_pesanan_kamar']);
+         // pesanan menu
+         Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
+         Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+         Route::get('/mybee-hotel&resto/pembayaran-menu/delete{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::prefix('staff-restoran')
     ->middleware(['auth', 'staff_pengelola_restoran'])
@@ -150,6 +167,15 @@ Route::prefix('staff-restoran')
         Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
         Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
         Route::post('/mybee-hotel&resto/contact/store', [LandingController::class, 'sendMessege']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        // pemesanan kamr
+        Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar/delete{id}',[LandingController::class,'delete_pesanan_kamar']);
+         // pesanan menu
+         Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
+         Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+         Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
@@ -161,6 +187,20 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/mybee-hotel&resto/blog/blog-singgle', [LandingController::class, 'blog_singgle']);
     Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);
     Route::post('/mybee-hotel&resto/contact/store', [LandingController::class, 'sendMessege']);
+    // pemesanan kamr
+    Route::post('/mybee-hotel&resto/booking', [LandingController::class, 'booking']);
+    Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+    Route::get('/mybee-hotel&resto/pembayaran-kamar/delete/{id}',[LandingController::class,'delete_pesanan_kamar']);
+     // pesanan menu
+     Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
+     Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+     Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
 });
 // landing page
 Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
+Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
+Route::get('/mybee-hotel&resto/room/room-singgle/{id}', [LandingController::class, 'room_singgle']);
+Route::get('/mybee-hotel&resto/restaurant', [LandingController::class, 'restaurant']);
+Route::get('/mybee-hotel&resto/about', [LandingController::class, 'about']);
+Route::get('/mybee-hotel&resto/blog', [LandingController::class, 'blog']);
+Route::get('/mybee-hotel&resto/contact', [LandingController::class, 'contact']);

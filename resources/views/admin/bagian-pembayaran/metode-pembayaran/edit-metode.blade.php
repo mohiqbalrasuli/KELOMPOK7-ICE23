@@ -30,14 +30,19 @@
                                 <form action="{{ url('admin/metode-pembayaran/update/'.$metode_pembayaran->id ) }}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="form-label" for="exampleInputnamabank">Nama Menu</label>
-                                        <input type="text" name="nama_menu" value="{{ $metode_pembayaran->nama_bank }}" class="form-control" id="exampleInputnamabank"
-                                            aria-describedby="emailHelp" placeholder="Masukkan Nama Menu">
+                                        <label class="form-label" for="exampleInputnamabank">Nama Bank</label>
+                                        <input type="text" name="nama_bank" value="{{ $metode_pembayaran->nama_bank }}" class="form-control" id="exampleInputnamabank"
+                                            aria-describedby="emailHelp" placeholder="Masukkan Nama Bank">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="exampleInputRekening">No Rekening</label>
-                                        <input type="text" name="no_rekening" name="{{ $metode_pembayaran->no_rekening }}" class="form-control" id="exampleInputRekening"
+                                        <input type="text" name="nomor_rekening" value="{{ $metode_pembayaran->nomor_rekening }}" class="form-control" id="exampleInputRekening"
                                             placeholder="Masukkan No Rekening">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="exampleInputRekening">Atas Nama</label>
+                                        <input type="text" name="atas_nama" value="{{ $metode_pembayaran->atas_nama }}" class="form-control" id="exampleInputRekening"
+                                            placeholder="Masukkan Nama pemilik rekening">
                                     </div>
                                     <button type="submit" class="btn btn-primary mb-4">Simpan</button>
                                 </form>

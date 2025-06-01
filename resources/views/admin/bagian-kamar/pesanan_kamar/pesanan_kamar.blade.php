@@ -45,17 +45,20 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pesanan as $item => $value )
                     <tr>
-                      <td>1</td>
-                      <td>101</td>
-                      <td>Joni</td>
-                      <td>08123456789</td>
-                      <td>5 Orang</td>
-                      <td>2025-05-16</td>
-                      <td>2025-05-17</td>
-                      <td>1.000.000</td>
-                      <td>Menunggu</td>
+                      <td>{{ $item + 1 }}</td>
+                      <td>{{ $value->kamar->nomer_kamar }}</td>
+                      <td>{{ $value->user->name }}</td>
+                      <td>{{ $value->no_telepon }}</td>
+                      <td>{{ $value->jumlah_orang }}</td>
+                      <td>{{ $value->tanggal_checkin }}</td>
+                      <td>{{ $value->tanggal_checkout }}</td>
+                      <td>{{ $value->total_harga }}</td>
+                      <td>{{ $value->status }}</td>
                     </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
               </div>

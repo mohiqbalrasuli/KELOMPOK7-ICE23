@@ -95,7 +95,6 @@ class MenuController extends Controller
         } elseif (Auth::user()->role == 'staff_pengelola_restoran') {
             return redirect('staff-restoran/data-menu')->with('success', 'Data Berhasil Dihapus');
         }
-        return redirect('/data-menu')->with('success', 'Data Berhasil Dihapus');
     }
 
     public function pesanan()

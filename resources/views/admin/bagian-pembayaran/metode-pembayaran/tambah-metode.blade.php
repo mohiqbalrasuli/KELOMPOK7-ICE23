@@ -30,13 +30,18 @@
                                 <form action="{{ url('admin/metode-pembayaran/store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="form-label" for="exampleInputnamabank">Nama Menu</label>
-                                        <input type="text" name="nama_menu" class="form-control" id="exampleInputnamabank"
+                                        <label class="form-label" for="exampleInputnamabank">Nama Bank</label>
+                                        <input type="text" name="nama_bank" class="form-control" id="exampleInputnamabank"
                                             aria-describedby="emailHelp" placeholder="Masukkan Nama Menu">
                                     </div>
                                     <div class="form-group">
+                                        <label class="form-label" for="exampleInputRekening">Atas Nama</label>
+                                        <input type="text" name="atas_nama" class="form-control" id="exampleInputRekening"
+                                            placeholder="Masukkan nama Pemilik rekening">
+                                    </div>
+                                    <div class="form-group">
                                         <label class="form-label" for="exampleInputRekening">No Rekening</label>
-                                        <input type="text" name="no_rekening" class="form-control" id="exampleInputRekening"
+                                        <input type="text" name="nomor_rekening" class="form-control" id="exampleInputRekening"
                                             placeholder="Masukkan No Rekening">
                                     </div>
                                     <button type="submit" class="btn btn-primary mb-4">Simpan</button>

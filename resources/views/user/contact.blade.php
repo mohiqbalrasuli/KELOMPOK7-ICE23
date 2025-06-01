@@ -7,10 +7,10 @@
             <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
                     <div class="text">
-                        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Home</a></span>
-                            <span>Contact Us</span>
+                        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Beranda</a></span>
+                            <span>Hubungi Kami</span>
                         </p>
-                        <h1 class="mb-4 bread">Contact Us</h1>
+                        <h1 class="mb-4 bread">Hubungi Kami</h1>
                     </div>
                 </div>
             </div>
@@ -21,17 +21,17 @@
         <div class="container">
             <div class="row d-flex mb-5 contact-info">
                 <div class="col-md-12 mb-4">
-                    <h2 class="h3">Contact Information</h2>
+                    <h2 class="h3">Informasi Kontak</h2>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-md-3 d-flex">
                     <div class="info rounded bg-white p-4">
-                        <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                        <p><span>Alamat:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
                     <div class="info rounded bg-white p-4">
-                        <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                        <p><span>Telepon:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-3 d-flex">
                     <div class="info rounded bg-white p-4">
-                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                        <p><span>Situs Web</span> <a href="#">yoursite.com</a></p>
                     </div>
                 </div>
             </div>
@@ -65,13 +65,13 @@
                                         @csrf
                     @endif
                     <div class="form-group">
-                        <input type="text" name="subjek" class="form-control" placeholder="Subject">
+                        <input type="text" name="subjek" class="form-control" placeholder="Subjek">
                     </div>
                     <div class="form-group">
-                        <textarea name="pesan" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="pesan" cols="30" rows="7" class="form-control" placeholder="Pesan"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                        <input type="submit" value="Kirim Pesan" class="btn btn-primary py-3 px-5">
                     </div>
                     </form>
 

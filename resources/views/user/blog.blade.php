@@ -6,8 +6,8 @@
         <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
           	<div class="text">
-	            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Home</a></span> <span>Blog</span></p>
-	            <h1 class="mb-4 bread">Our Stories</h1>
+	            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Beranda</a></span> <span>Blog</span></p>
+	            <h1 class="mb-4 bread">Cerita Kami</h1>
             </div>
           </div>
         </div>
@@ -23,13 +23,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Pengalaman Menakjubkan di Hotel Kami</a></h3>
+                <p>Sebuah pengalaman yang tak terlupakan menanti Anda di hotel kami. Dengan fasilitas lengkap dan pelayanan terbaik, kami menjamin kenyamanan Anda selama menginap.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -39,13 +39,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Fasilitas Terbaik untuk Tamu Kami</a></h3>
+                <p>Nikmati berbagai fasilitas mewah yang kami sediakan untuk memberikan pengalaman menginap yang tak terlupakan bagi setiap tamu kami.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -55,13 +55,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Kuliner Lezat di Restoran Hotel</a></h3>
+                <p>Jelajahi berbagai hidangan lezat yang disajikan oleh chef profesional kami. Setiap hidangan dibuat dengan bahan-bahan berkualitas terbaik.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -72,13 +72,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Aktivitas Menarik untuk Keluarga</a></h3>
+                <p>Temukan berbagai aktivitas seru yang dapat dinikmati bersama keluarga. Kami menyediakan program khusus untuk membuat liburan Anda lebih berkesan.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -88,13 +88,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Paket Liburan Spesial</a></h3>
+                <p>Dapatkan penawaran menarik untuk paket liburan Anda. Kami menyediakan berbagai pilihan paket yang dapat disesuaikan dengan kebutuhan Anda.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -104,13 +104,13 @@
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
-                  <div><a href="#">Oct. 30, 2019</a></div>
+                  <div><a href="#">30 Okt. 2019</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <a href="#" class="btn btn-secondary rounded">More info</a>
+                <h3 class="heading"><a href="#">Testimoni Tamu Kami</a></h3>
+                <p>Baca pengalaman menginap dari tamu-tamu kami yang telah merasakan pelayanan dan kenyamanan di hotel kami.</p>
+                <a href="#" class="btn btn-secondary rounded">Selengkapnya</a>
               </div>
             </div>
           </div>

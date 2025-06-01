@@ -7,8 +7,8 @@
         <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
           	<div class="text">
-	        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Home</a></span> <span>About Us</span></p>
-            <h1 class="mb-4 bread">About Mybee Hotel & Restaurant</h1>
+	        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/mybee-hotel&resto">Beranda</a></span> <span>Tentang Kami</span></p>
+            <h1 class="mb-4 bread">Tentang Mybee Hotel & Restaurant</h1>
             </div>
           </div>
         </div>
@@ -19,8 +19,8 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Welcome to Mybee Hotel & Restaurant</span>
-            <h2 class="mb-4">You'll Never Want To Leave</h2>
+          	<span class="subheading">Selamat Datang di Mybee Hotel & Restaurant</span>
+            <h2 class="mb-4">Anda Akan Betah Tinggal Di Sini</h2>
           </div>
         </div>
         <div class="row d-flex">
@@ -32,7 +32,7 @@
               	</div>
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">Friendly Service</h3>
+                <h3 class="heading mb-3">Pelayanan Ramah</h3>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
               	</div>
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">Get Breakfast</h3>
+                <h3 class="heading mb-3">Sarapan Gratis</h3>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
               	</div>
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">Transfer Services</h3>
+                <h3 class="heading mb-3">Layanan Antar Jemput</h3>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
               	</div>
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">Suits &amp; SPA</h3>
+                <h3 class="heading mb-3">Suite &amp; SPA</h3>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
               	</div>
               </div>
               <div class="media-body">
-                <h3 class="heading mb-3">Cozy Rooms</h3>
+                <h3 class="heading mb-3">Kamar Nyaman</h3>
               </div>
             </div>
           </div>
@@ -92,16 +92,16 @@
 			<div class="container">
 				<div class="row no-gutters">
 					<div class="col-md-7 order-md-last d-flex">
-						<div class="img img-1 mr-md-2 ftco-animate" style="background-image: url(images/about-1.jpg);"></div>
-						<div class="img img-2 ml-md-2 ftco-animate" style="background-image: url(images/about-2.jpg);"></div>
+						<div class="img img-1 mr-md-2 ftco-animate" style="background-image: url({{ asset('/assets/landing/images/about-1.jpg') }});"></div>
+						<div class="img img-2 ml-md-2 ftco-animate" style="background-image: url({{ asset('/assets/landing/images/about-2.jpg') }});"></div>
 					</div>
 					<div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
 	          <div class="heading-section mb-4 my-5 my-md-0">
-	          	<span class="subheading">About Mybee Hotel & Restaurant</span>
-	            <h2 class="mb-4">Mybee Hotel & Restaurant the Most Recommended Hotel All Over the World</h2>
+	          	<span class="subheading">Tentang Mybee Hotel & Restaurant</span>
+	            <h2 class="mb-4">Mybee Hotel & Restaurant Hotel Paling Direkomendasikan di Seluruh Dunia</h2>
 	          </div>
-	          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-	          <p><a href="#" class="btn btn-secondary rounded">Reserve Your Room Now</a></p>
+	          <p>Jauh di sana, di balik pegunungan kata-kata, jauh dari negara Vokalia dan Consonantia, di sana tinggal teks-teks buta. Terpisah mereka tinggal di Bookmarksgrove tepat di pesisir Semantics, lautan bahasa yang besar.</p>
+	          <p><a href="#" class="btn btn-secondary rounded">Pesan Kamar Anda Sekarang</a></p>
 					</div>
 				</div>
 			</div>
@@ -111,26 +111,26 @@
       <div class="container">
         <div class="row no-gutters ftco-animate justify-content-center">
         	<div class="col-md-5 d-flex">
-        		<div class="testimony-img aside-stretch-2" style="background-image: url(images/testimony-img.jpg);"></div>
+        		<div class="testimony-img aside-stretch-2" style="background-image: url({{ asset('/assets/landing/images/testimony-img.jpg') }});"></div>
         	</div>
           <div class="col-md-7 py-5 pl-md-5">
           	<div class="py-md-5">
 	          	<div class="heading-section ftco-animate mb-4">
-	          		<span class="subheading">Testimony</span>
-			          <h2 class="mb-0">Happy Customer</h2>
+	          		<span class="subheading">Testimoni</span>
+			          <h2 class="mb-0">Pelanggan Puas</h2>
 			        </div>
 	            <div class="carousel-testimony owl-carousel ftco-animate">
 	              <div class="item">
 	                <div class="testimony-wrap pb-4">
 	                  <div class="text">
-	                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+	                    <p class="mb-4">Sebuah sungai kecil bernama Duden mengalir di dekat tempat mereka dan menyediakan segala yang diperlukan. Ini adalah negara yang paradis, di mana bagian-bagian kalimat yang dipanggang terbang ke mulut Anda.</p>
 	                  </div>
 	                  <div class="d-flex">
-		                  <div class="user-img" style="background-image: url(images/person_1.jpg)">
+		                  <div class="user-img" style="background-image: url({{ asset('/assets/landing/images/person_1.jpg') }})">
 		                  </div>
 		                  <div class="pos ml-3">
 		                  	<p class="name">Gerald Hodson</p>
-		                    <span class="position">Businessman</span>
+		                    <span class="position">Pengusaha</span>
 		                  </div>
 		                </div>
 	                </div>
@@ -138,14 +138,14 @@
 	              <div class="item">
 	                <div class="testimony-wrap pb-4">
 	                  <div class="text">
-	                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+	                    <p class="mb-4">Sebuah sungai kecil bernama Duden mengalir di dekat tempat mereka dan menyediakan segala yang diperlukan. Ini adalah negara yang paradis, di mana bagian-bagian kalimat yang dipanggang terbang ke mulut Anda.</p>
 	                  </div>
 	                  <div class="d-flex">
-		                  <div class="user-img" style="background-image: url(images/person_2.jpg)">
+		                  <div class="user-img" style="background-image: url({{ asset('/assets/landing/images/person_2.jpg') }})">
 		                  </div>
 		                  <div class="pos ml-3">
 		                  	<p class="name">Gerald Hodson</p>
-		                    <span class="position">Businessman</span>
+		                    <span class="position">Pengusaha</span>
 		                  </div>
 		                </div>
 	                </div>
@@ -153,7 +153,7 @@
 	              <div class="item">
 	                <div class="testimony-wrap pb-4">
 	                  <div class="text">
-	                    <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+	                    <p class="mb-4">Sebuah sungai kecil bernama Duden mengalir di dekat tempat mereka dan menyediakan segala yang diperlukan. Ini adalah negara yang paradis, di mana bagian-bagian kalimat yang dipanggang terbang ke mulut Anda.</p>
 	                  </div>
 	                  <div class="d-flex">
 		                  <div class="user-img" style="background-image: url(images/person_3.jpg)">
@@ -197,35 +197,35 @@
         </div>
         <div class="row no-gutters">
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(images/insta-1.jpg);">
+            <a href="{{ asset('/assets/landing/images/insta-1.jpg') }}" class="insta-img image-popup" style="background-image: url({{ asset('/assets/landing/images/insta-1.jpg') }});">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(images/insta-2.jpg);">
+            <a href="{{ asset('/assets/landing/images/insta-2.jpg') }}" class="insta-img image-popup" style="background-image: url({{ asset('/assets/landing/images/insta-2.jpg') }});">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(images/insta-3.jpg);">
+            <a href="{{ asset('/assets/landing/images/insta-3.jpg') }}" class="insta-img image-popup" style="background-image: url({{ asset('/assets/landing/images/insta-3.jpg') }});">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(images/insta-4.jpg);">
+            <a href="{{ asset('/assets/landing/images/insta-4.jpg') }}" class="insta-img image-popup" style="background-image: url({{ asset('/assets/landing/images/insta-4.jpg') }});">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>
             </a>
           </div>
           <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(images/insta-5.jpg);">
+            <a href="{{ asset('/assets/landing/images/insta-5.jpg') }}" class="insta-img image-popup" style="background-image: url({{ asset('/assets/landing/images/insta-5.jpg') }});">
               <div class="icon d-flex justify-content-center">
                 <span class="icon-instagram align-self-center"></span>
               </div>

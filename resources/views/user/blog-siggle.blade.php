@@ -7,7 +7,7 @@
       <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
             <div class="text">
-              <p class="breadcrumbs mb-2" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+              <p class="breadcrumbs mb-2" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Beranda</a></span> <span class="mr-2"><a href="blog.html">Blog</a></span> <span>Blog Single</span></p>
               <h1 class="mb-4 bread">Blog Single</h1>
           </div>
         </div>
@@ -19,13 +19,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 ftco-animate">
-          <h2 class="mb-3">Be A Creative Web Designer</h2>
+          <h2 class="mb-3">Menjadi Web Designer Kreatif</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
           <p>
             <img src="images/image_1.jpg" alt="" class="img-fluid">
           </p>
           <p>Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!</p>
-          <h2 class="mb-3 mt-5">#2. Creative WordPress Themes</h2>
+          <h2 class="mb-3 mt-5">#2. Tema WordPress Kreatif</h2>
           <p>Temporibus ad error suscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem atque quidem tempora maiores ex architecto voluptatum aut officia doloremque. Error dolore voluptas, omnis molestias odio dignissimos culpa ex earum nisi consequatur quos odit quasi repellat qui officiis reiciendis incidunt hic non? Debitis commodi aut, adipisci.</p>
           <p>
             <img src="images/image_2.jpg" alt="" class="img-fluid">
@@ -36,10 +36,10 @@
           <p>Voluptas dolores dignissimos dolorum temporibus, autem aliquam ducimus at officia adipisci quasi nemo a perspiciatis provident magni laboriosam repudiandae iure iusto commodi debitis est blanditiis alias laborum sint dolore. Dolores, iure, reprehenderit. Error provident, pariatur cupiditate soluta doloremque aut ratione. Harum voluptates mollitia illo minus praesentium, rerum ipsa debitis, inventore?</p>
           <div class="tag-widget post-tag-container mb-5 mt-5">
             <div class="tagcloud">
-              <a href="#" class="tag-cloud-link">Life</a>
-              <a href="#" class="tag-cloud-link">Sport</a>
-              <a href="#" class="tag-cloud-link">Tech</a>
-              <a href="#" class="tag-cloud-link">Travel</a>
+              <a href="#" class="tag-cloud-link">Kehidupan</a>
+              <a href="#" class="tag-cloud-link">Olahraga</a>
+              <a href="#" class="tag-cloud-link">Teknologi</a>
+              <a href="#" class="tag-cloud-link">Perjalanan</a>
             </div>
           </div>
 
@@ -55,7 +55,7 @@
 
 
           <div class="pt-5 mt-5">
-            <h3 class="mb-5">6 Comments</h3>
+            <h3 class="mb-5">6 Komentar</h3>
             <ul class="comment-list">
               <li class="comment">
                 <div class="vcard bio">
@@ -63,9 +63,9 @@
                 </div>
                 <div class="comment-body">
                   <h3>John Doe</h3>
-                  <div class="meta">Oct. 30, 2018 at 2:21pm</div>
+                  <div class="meta">30 Okt. 2018 pukul 2:21</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                  <p><a href="#" class="reply">Reply</a></p>
+                  <p><a href="#" class="reply">Balas</a></p>
                 </div>
               </li>
 
@@ -75,9 +75,9 @@
                 </div>
                 <div class="comment-body">
                   <h3>John Doe</h3>
-                  <div class="meta">Oct. 30, 2018 at 2:21pm</div>
+                  <div class="meta">30 Okt. 2018 pukul 2:21</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                  <p><a href="#" class="reply">Reply</a></p>
+                  <p><a href="#" class="reply">Balas</a></p>
                 </div>
 
                 <ul class="children">
@@ -87,11 +87,10 @@
                     </div>
                     <div class="comment-body">
                       <h3>John Doe</h3>
-                      <div class="meta">Oct. 30, 2018 at 2:21pm</div>
+                      <div class="meta">30 Okt. 2018 pukul 2:21</div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                      <p><a href="#" class="reply">Reply</a></p>
+                      <p><a href="#" class="reply">Balas</a></p>
                     </div>
-
 
                     <ul class="children">
                       <li class="comment">

@@ -14,6 +14,8 @@ class pesanan_kamar extends Model
         'jumlah_orang',
         'tanggal_checkin',
         'tanggal_checkout',
+        'durasi', // Durasi menginap dalam hari
+        'harga_awal', // Harga awal sebelum diskon atau tambahan biaya
         'total_harga',
         'status',
     ];

@@ -37,6 +37,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Bank</th>
+                                    <th>Atas Nama</th>
                                     <th>No Rekening</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -46,7 +47,8 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->nama_bank }}</td>
-                                    <td>{{ $value->no_rekening }}</td>
+                                    <td>{{ $value->atas_nama }}</td>
+                                    <td>{{ $value->nomor_rekening }}</td>
                                     <td>
                                         <a href="{{ url('admin/metode-pembayaran/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
                                         <a href="{{ url('admin/metode-pembayaran/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>

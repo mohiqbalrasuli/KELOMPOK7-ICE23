@@ -158,7 +158,7 @@
                                             <tr>
                                                 <td><a href="#" class="text-muted">{{ $value->kamar->nomer_kamar }}</a></td>
                                                 <td>{{ $value->user->name }}</td>
-                                                <td>{{ $value->tanggal_chekin }}</td>
+                                                <td>{{ $value->tanggal_checkin }}</td>
                                                 <td><span class="d-flex align-items-center gap-2"><i
                                                     class="fas fa-circle text-success f-10 m-r-5"></i>{{ $value->status }}</span>
                                                 </td>

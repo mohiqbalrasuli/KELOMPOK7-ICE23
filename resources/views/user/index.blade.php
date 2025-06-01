@@ -10,9 +10,9 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-end">
                         <div class="col-md-6 ftco-animate">
                             <div class="text">
-                                <h2>More than a hotel... an experience</h2>
+                                <h2>Lebih dari sekadar hotel... sebuah pengalaman</h2>
                                 <h1 class="mb-3">
-                                    Hotel for the whole family, all year round.
+                                    Hotel untuk seluruh keluarga, sepanjang tahun.
                                 </h1>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-6 ftco-animate">
                             <div class="text">
                                 <h2>Harbor Lights Hotel &amp; Resort</h2>
-                                <h1 class="mb-3">It feels like staying in your own home.</h1>
+                                <h1 class="mb-3">Terasa seperti berada di rumah sendiri.</h1>
                             </div>
                         </div>
                     </div>
@@ -40,79 +40,99 @@
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-lg-12">
-                        <form action="#" class="booking-form aside-stretch">
-                            <div class="row">
-                                <div class="col-md d-flex py-md-4">
-                                    <div class="form-group align-self-stretch d-flex align-items-end">
-                                        <div class="wrap align-self-stretch py-3 px-4">
-                                            <label for="#">Check-in Date</label>
-                                            <input type="text" class="form-control checkin_date"
-                                                placeholder="Check-in date" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md d-flex py-md-4">
-                                    <div class="form-group align-self-stretch d-flex align-items-end">
-                                        <div class="wrap align-self-stretch py-3 px-4">
-                                            <label for="#">Check-out Date</label>
-                                            <input type="text" class="form-control checkout_date"
-                                                placeholder="Check-out date" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md d-flex py-md-4">
-                                    <div class="form-group align-self-stretch d-flex align-items-end">
-                                        <div class="wrap align-self-stretch py-3 px-4">
-                                            <label for="#">Room</label>
-                                            <div class="form-field">
-                                                <div class="select-wrap">
-                                                    <div class="icon">
-                                                        <span class="ion-ios-arrow-down"></span>
-                                                    </div>
-                                                    <select name="" id="" class="form-control">
-                                                        <option value="">Suite</option>
-                                                        <option value="">Family Room</option>
-                                                        <option value="">Deluxe Room</option>
-                                                        <option value="">Classic Room</option>
-                                                        <option value="">Superior Room</option>
-                                                        <option value="">Luxury Room</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md d-flex py-md-4">
-                                    <div class="form-group align-self-stretch d-flex align-items-end">
-                                        <div class="wrap align-self-stretch py-3 px-4">
-                                            <label for="#">Guests</label>
-                                            <div class="form-field">
-                                                <div class="select-wrap">
-                                                    <div class="icon">
-                                                        <span class="ion-ios-arrow-down"></span>
-                                                    </div>
-                                                    <select name="" id="" class="form-control">
-                                                        <option value="">1 Adult</option>
-                                                        <option value="">2 Adult</option>
-                                                        <option value="">3 Adult</option>
-                                                        <option value="">4 Adult</option>
-                                                        <option value="">5 Adult</option>
-                                                        <option value="">6 Adult</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md d-flex">
-                                    <div class="form-group d-flex align-self-stretch">
-                                        <a href="#"
-                                            class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check
-                                                Availability
-                                                <small>Best Price Guaranteed!</small></span></a>
+                        @php
+                            $role = auth()->user()->role;
+                            $action = match ($role) {
+                                'admin' => url('admin/mybee-hotel&resto/pesanan-kamar/store'),
+                                'staff_pengelola_kamar' => url('staff-kamar/mybee-hotel&resto/pesanan-kamar/store'),
+                                'staff_pengelola_restoran' => url('staff-restoran/mybee-hotel&resto/pesanan-kamar/store'),
+                                default => url('mybee-hotel&resto/pesanan-kamar/store'),
+                            };
+                        @endphp
+
+                        <form action="{{ $action }}" class="booking-form aside-stretch" method="POST">
+                            @csrf
+                        <div class="row">
+                            <div class="col-md d-flex py-md-4">
+                                <div class="form-group align-self-stretch d-flex align-items-end">
+                                    <div class="wrap align-self-stretch py-3 px-4">
+                                        <label for="#">Tanggal Check-in</label>
+                                        <input type="date" name="tanggal_checkin" class="form-control"
+                                            placeholder="Tanggal check-in" />
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md d-flex py-md-4">
+                                <div class="form-group align-self-stretch d-flex align-items-end">
+                                    <div class="wrap align-self-stretch py-3 px-4">
+                                        <label for="#">Tanggal Check-out</label>
+                                        <input type="date" name="tanggal_checkout" class="form-control"
+                                            placeholder="Tanggal check-out" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md d-flex py-md-4">
+                                <div class="form-group align-self-stretch d-flex align-items-end">
+                                    <div class="wrap align-self-stretch py-3 px-4">
+                                        <label for="#">No Telepon</label>
+                                        <input type="text" name="no_telepon" class="form-control"
+                                            placeholder="Masukkan No. Telepon" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md d-flex py-md-4">
+                                <div class="form-group align-self-stretch d-flex align-items-end">
+                                    <div class="wrap align-self-stretch py-3 px-4">
+                                        <label for="#">Kamar</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon">
+                                                    <span class="ion-ios-arrow-down"></span>
+                                                </div>
+                                                <select name="kamar_id" id="" class="form-control">
+                                                    <option value="">Pilih Kamar</option>
+                                                    @foreach ($kamar as $value)
+                                                        <option value="{{ $value->id }}">
+                                                            ({{ $value->nomer_kamar }}){{ $value->kategori_kamar->nama_kategori }}
+                                                            - Rp {{ $value->kategori_kamar->harga }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md d-flex py-md-4">
+                                <div class="form-group align-self-stretch d-flex align-items-end">
+                                    <div class="wrap align-self-stretch py-3 px-4">
+                                        <label for="#">Tamu</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <div class="icon">
+                                                    <span class="ion-ios-arrow-down"></span>
+                                                </div>
+                                                <select name="jumlah_orang" id="" class="form-control">
+                                                    <option value="1">1 Dewasa</option>
+                                                    <option value="2">2 Dewasa</option>
+                                                    <option value="3">3 Dewasa</option>
+                                                    <option value="4">4 Dewasa</option>
+                                                    <option value="5">5 Dewasa</option>
+                                                    <option value="6">6 Dewasa</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md d-flex">
+                                <div class="form-group d-flex align-self-stretch">
+                                    <button type="submit"
+                                        class="btn btn-primary py-5 py-md-3 px-4 align-self-stretch d-block"><span>Cek
+                                            Ketersediaan
+                                            <small>Harga Terbaik Dijamin!</small></span></button>
+                                </div>
+                            </div>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -120,13 +140,12 @@
         </section>
     @endauth
 
-
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Welcome to Harbor Lights Hotel</span>
-                    <h2 class="mb-4">You'll Never Want To Leave</h2>
+                    <span class="subheading">Selamat Datang di Harbor Lights Hotel</span>
+                    <h2 class="mb-4">Anda Akan Betah Tinggal Di Sini</h2>
                 </div>
             </div>
             <div class="row d-flex">
@@ -138,7 +157,7 @@
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Friendly Service</h3>
+                            <h3 class="heading mb-3">Layanan Ramah</h3>
                         </div>
                     </div>
                 </div>
@@ -150,7 +169,7 @@
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Get Breakfast</h3>
+                            <h3 class="heading mb-3">Sarapan Gratis</h3>
                         </div>
                     </div>
                 </div>
@@ -162,7 +181,7 @@
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Transfer Services</h3>
+                            <h3 class="heading mb-3">Layanan Antar Jemput</h3>
                         </div>
                     </div>
                 </div>
@@ -174,7 +193,7 @@
                             </div>
                         </div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Suits &amp; SPA</h3>
+                            <h3 class="heading mb-3">Suite &amp; SPA</h3>
                         </div>
                     </div>
                 </div>
@@ -205,20 +224,16 @@
                 </div>
                 <div class="col-md-5 wrap-about pb-md-3 ftco-animate pr-md-5 pb-md-5 pt-md-4">
                     <div class="heading-section mb-4 my-5 my-md-0">
-                        <span class="subheading">About Harbor Lights Hotel</span>
+                        <span class="subheading">Tentang Mybee Hotel & Restaurant</span>
                         <h2 class="mb-4">
-                            Harbor Lights Hotel the Most Recommended Hotel All Over the
-                            World
+                            Mybee Hotel & Restaurant Hotel Terbaik yang Direkomendasikan di Seluruh Indonesia
                         </h2>
                     </div>
                     <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics, a
-                        large language ocean.
+                        Mybee Hotel & Restaurant adalah hotel bintang 5 yang menawarkan pengalaman menginap mewah dengan fasilitas lengkap dan pelayanan terbaik. Terletak di lokasi strategis, kami memberikan kenyamanan maksimal bagi setiap tamu kami.
                     </p>
                     <p>
-                        <a href="#" class="btn btn-secondary rounded">Reserve Your Room Now</a>
+                        <a href="#" class="btn btn-secondary rounded">Pesan Kamar Anda Sekarang</a>
                     </p>
                 </div>
             </div>
@@ -235,18 +250,15 @@
                 <div class="col-md-7 py-5 pl-md-5">
                     <div class="py-md-5">
                         <div class="heading-section ftco-animate mb-4">
-                            <span class="subheading">Testimony</span>
-                            <h2 class="mb-0">Happy Customer</h2>
+                            <span class="subheading">Testimoni</span>
+                            <h2 class="mb-0">Pelanggan Puas</h2>
                         </div>
                         <div class="carousel-testimony owl-carousel ftco-animate">
                             <div class="item">
                                 <div class="testimony-wrap pb-4">
                                     <div class="text">
                                         <p class="mb-4">
-                                            A small river named Duden flows by their place and
-                                            supplies it with the necessary regelialia. It is a
-                                            paradisematic country, in which roasted parts of
-                                            sentences fly into your mouth.
+                                            Hotel yang sangat nyaman dengan pelayanan terbaik. Staff sangat ramah dan profesional. Fasilitas lengkap dan bersih. Sangat direkomendasikan untuk liburan keluarga.
                                         </p>
                                     </div>
                                     <div class="d-flex">
@@ -254,8 +266,8 @@
                                             style="background-image: url({{ asset('/assets/landing/images/person_1.jpg') }})">
                                         </div>
                                         <div class="pos ml-3">
-                                            <p class="name">Gerald Hodson</p>
-                                            <span class="position">Businessman</span>
+                                            <p class="name">Budi Santoso</p>
+                                            <span class="position">Pengusaha</span>
                                         </div>
                                     </div>
                                 </div>
@@ -264,19 +276,16 @@
                                 <div class="testimony-wrap pb-4">
                                     <div class="text">
                                         <p class="mb-4">
-                                            A small river named Duden flows by their place and
-                                            supplies it with the necessary regelialia. It is a
-                                            paradisematic country, in which roasted parts of
-                                            sentences fly into your mouth.
+                                            Kamar yang luas dan nyaman dengan pemandangan kota yang indah. Restoran hotel menyajikan makanan lezat dengan pilihan menu yang beragam. Spa dan kolam renang membuat liburan semakin menyenangkan.
                                         </p>
                                     </div>
                                     <div class="d-flex">
                                         <div class="user-img"
-                                            style="background-image: url({{ asset('/assets/landing/images/person_2.jpg') }}    )">
+                                            style="background-image: url({{ asset('/assets/landing/images/person_2.jpg') }})">
                                         </div>
                                         <div class="pos ml-3">
-                                            <p class="name">Gerald Hodson</p>
-                                            <span class="position">Businessman</span>
+                                            <p class="name">Siti Rahayu</p>
+                                            <span class="position">Dokter</span>
                                         </div>
                                     </div>
                                 </div>
@@ -285,10 +294,7 @@
                                 <div class="testimony-wrap pb-4">
                                     <div class="text">
                                         <p class="mb-4">
-                                            A small river named Duden flows by their place and
-                                            supplies it with the necessary regelialia. It is a
-                                            paradisematic country, in which roasted parts of
-                                            sentences fly into your mouth.
+                                            Lokasi strategis dengan akses mudah ke berbagai tempat wisata. Tim event organizer sangat membantu dalam menyiapkan acara pernikahan kami. Semua tamu terkesan dengan pelayanan yang diberikan.
                                         </p>
                                     </div>
                                     <div class="d-flex">
@@ -296,8 +302,8 @@
                                             style="background-image: url({{ asset('/assets/landing/images/person_3.jpg') }})">
                                         </div>
                                         <div class="pos ml-3">
-                                            <p class="name">Gerald Hodson</p>
-                                            <span class="position">Businessman</span>
+                                            <p class="name">Ahmad Hidayat</p>
+                                            <span class="position">Guru</span>
                                         </div>
                                     </div>
                                 </div>
@@ -306,10 +312,7 @@
                                 <div class="testimony-wrap pb-4">
                                     <div class="text">
                                         <p class="mb-4">
-                                            A small river named Duden flows by their place and
-                                            supplies it with the necessary regelialia. It is a
-                                            paradisematic country, in which roasted parts of
-                                            sentences fly into your mouth.
+                                            Hotel dengan konsep modern dan elegan. Cocok untuk meeting bisnis dan acara perusahaan. Fasilitas meeting room yang lengkap dengan teknologi terkini. Tim staff sangat profesional dan responsif.
                                         </p>
                                     </div>
                                     <div class="d-flex">
@@ -317,8 +320,8 @@
                                             style="background-image: url({{ asset('/assets/landing/images/person_4.jpg') }})">
                                         </div>
                                         <div class="pos ml-3">
-                                            <p class="name">Gerald Hodson</p>
-                                            <span class="position">Businessman</span>
+                                            <p class="name">Dewi Lestari</p>
+                                            <span class="position">Event Organizer</span>
                                         </div>
                                     </div>
                                 </div>
@@ -334,8 +337,8 @@
         <div class="container-fluid px-0">
             <div class="row no-gutters justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Harbor Lights Rooms</span>
-                    <h2 class="mb-4">Hotel Master's Rooms</h2>
+                    <span class="subheading">Kamar Mybee Hotel</span>
+                    <h2 class="mb-4">Daftar Kategori kamar</h2>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -357,19 +360,21 @@
                                     </p>
                                     <h3 class="mb-3"><a href="rooms.html">{{ $value->nama_kategori }}</a></h3>
                                     <p class="pt-1">
-                                        @if(auth()->user()->role == 'admin')
-                                            <a href="{{ url('admin/mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
-                                                class="btn-custom px-3 py-2 rounded">View</a>
-                                        @elseif (auth()->user()->role == 'staff_pengelola_kamar')
-                                            <a href="{{ url('staff-kamar/mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
-                                                class="btn-custom px-3 py-2 rounded">View</a>
-                                        @elseif (auth()->user()->role == 'staff_pengelola_restoran')
-                                            <a href="{{ url('staff-restoran/mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
-                                                class="btn-custom px-3 py-2 rounded">View</a>
-                                        @else
-                                            <a href="{{ url('mybee-hotel&resto/room/room-singgle/', $value->id) }}"
-                                                class="btn-custom px-3 py-2 rounded">View</a>
-                                        @endif
+                                        @auth
+                                            @if (auth()->user()->role == 'admin')
+                                                <a href="{{ url('admin/mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
+                                                    class="btn-custom px-3 py-2 rounded">View</a>
+                                            @elseif (auth()->user()->role == 'staff_pengelola_kamar')
+                                                <a href="{{ url('staff-kamar/mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
+                                                    class="btn-custom px-3 py-2 rounded">View</a>
+                                            @elseif (auth()->user()->role == 'staff_pengelola_restoran')
+                                                <a href="{{ url('staff-restoran/mybee-hotel&resto/room/room-singgle/' . $value->id) }}"
+                                                    class="btn-custom px-3 py-2 rounded">View</a>
+                                            @else
+                                                <a href="{{ url('mybee-hotel&resto/room/room-singgle/'. $value->id) }}"
+                                                    class="btn-custom px-3 py-2 rounded">View</a>
+                                            @endif
+                                        @endauth
                                     </p>
                                 </div>
                             </div>
@@ -393,7 +398,8 @@
                     <div class="col-lg-6 col-xl-4 d-flex">
                         <div class="pricing-entry rounded d-flex ftco-animate">
                             <div class="img"
-                                style="background-image: url({{ asset('assets/images/menu/'.$value->gambar) }}  )"></div>
+                                style="background-image: url({{ asset('assets/images/menu/' . $value->gambar) }}  )">
+                            </div>
                             <div class="desc p-4">
                                 <div class="d-md-flex text align-items-start">
                                     <h3><span>{{ $value->nama_menu }}</span></h3>
@@ -410,7 +416,18 @@
                 @endforeach
 
                 <div class="col-md-12 text-center ftco-animate">
-                    <p><a href="#" class="btn btn-primary rounded">View All Menu</a></p>
+                    @auth
+                        @if (auth()->user()->role == 'admin')
+                            <p><a href="{{ url('admin/mybee-hotel&resto/restaurant') }}" class="btn btn-primary rounded">View
+                                    All Menu</a></p>
+                        @elseif (auth()->user()->role == 'staff_pengelola_kamar')
+                            <p><a href="{{ url('staff-kamar/mybee-hotel&resto/restaurant') }}"
+                                    class="btn btn-primary rounded">View All Menu</a></p>
+                        @elseif (auth()->user()->role == 'staff_pengelola_restoran')
+                            <p><a href="{{ url('staff-restoran/mybee-hotel&resto/restaurant') }}"
+                                    class="btn btn-primary rounded">View All Menu</a></p>
+                        @endif
+                    @endauth
                 </div>
             </div>
         </div>
