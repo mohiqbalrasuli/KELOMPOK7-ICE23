@@ -106,7 +106,8 @@
                                         {{ $value->kategori_menu->nama_kategori_menu }}
                                     </p>
                                 </div>
-                                @php
+                                @auth
+                                    @php
                                 $role = auth()->user()->role;
                                 $action = match ($role) {
                                     'admin' => url('admin/mybee-hotel&resto/pesanan-menu/store'),
@@ -128,6 +129,7 @@
                                     <input type="hidden" name="kursi" value="1">
                                     <button class="btn btn-primary" style="margin-top: 10px" type="submit">Tambahkan Pesanan</button>
                                 </form>
+                                @endauth
                             </div>
                         </div>
                     </div>
