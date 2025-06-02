@@ -29,11 +29,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Kamar Terisi</h6>
-                                <h4 class="mb-3">{{ $kamar_terisi }}/{{ $kamar_tersedia }} <span
-                                        class="badge bg-light-primary border border-primary"><i class="ti ti-trending-up"></i>
-                                        80%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tingkat hunian <span class="text-primary">80%</span> hari ini
-                                </p>
+                                <h4 class="mb-3">{{ $kamar_terisi }}/{{ $kamar_tersedia }} </h4>
                             </div>
                         </div>
                     </div>
@@ -41,11 +37,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Tamu</h6>
-                                <h4 class="mb-3">{{ $user }} <span
-                                        class="badge bg-light-success border border-success"><i class="ti ti-trending-up"></i>
-                                        15%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-success">6</span> tamu baru hari ini
-                                </p>
+                                <h4 class="mb-3">{{ $user }} </h4>
                             </div>
                         </div>
                     </div>
@@ -53,10 +45,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
-                                            class="ti ti-trending-up"></i> 25%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                </p>
+                                <h4 class="mb-3">Rp {{ $pendapatan_kamar_hari_ini }} </h4>
                             </div>
                         </div>
                     </div>
@@ -64,9 +53,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-warning border border-warning"><i
-                                            class="ti ti-trending-up"></i> 12%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} </h4>
                             </div>
                         </div>
                     </div>
@@ -76,10 +63,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Menu</h6>
-                                <h4 class="mb-3">{{ $menu }} <span
-                                        class="badge bg-light-warning border border-warning"><i class="ti ti-trending-up"></i>
-                                        12%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
+                                <h4 class="mb-3">{{ $menu }}</h4>
                             </div>
                         </div>
                     </div>
@@ -101,13 +85,7 @@
                                         <h6 class="mb-2 f-w-400 text-muted">Total {{ $value->nama_kategori_menu }}</h6>
                                         <h4 class="mb-3">
                                             {{ $jumlahMenuPerKategori[$value->id] ?? 0 }}
-                                            <span class="badge bg-light-danger border border-danger">
-                                                <i class="ti ti-trending-up"></i> 25%
-                                            </span>
                                         </h4>
-                                        <p class="mb-0 text-muted text-sm">
-                                            Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -118,10 +96,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
-                                            class="ti ti-trending-up"></i> 25%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                </p>
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} </h4>
+
                             </div>
                         </div>
                     </div>
@@ -129,10 +105,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-danger border border-danger"><i
-                                            class="ti ti-trending-up"></i> 25%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                </p>
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_menu }}</h4>
+
                             </div>
                         </div>
                     </div>
@@ -290,11 +264,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="mb-2 f-w-400 text-muted">Total Kamar Terisi</h6>
-                        <h4 class="mb-3">{{ $kamar_terisi }}/{{ $kamar_tersedia }} <span
-                                class="badge bg-light-primary border border-primary"><i class="ti ti-trending-up"></i>
-                                80%</span></h4>
-                        <p class="mb-0 text-muted text-sm">Tingkat hunian <span class="text-primary">80%</span> hari ini
-                        </p>
+                        <h4 class="mb-3">{{ $kamar_terisi }}/{{ $kamar_tersedia }}</h4>
                     </div>
                 </div>
             </div>
@@ -302,11 +272,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="mb-2 f-w-400 text-muted">Total Tamu</h6>
-                        <h4 class="mb-3">{{ $user }} <span class="badge bg-light-success border border-success"><i
-                                    class="ti ti-trending-up"></i>
-                                15%</span></h4>
-                        <p class="mb-0 text-muted text-sm">Tambah <span class="text-success">6</span> tamu baru hari ini
-                        </p>
+                        <h4 class="mb-3">{{ $user }}</h4>
                     </div>
                 </div>
             </div>
@@ -314,10 +280,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} <span class="badge bg-light-danger border border-danger"><i
-                                            class="ti ti-trending-up"></i> 25%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                </p>
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }}</h4>
                             </div>
                         </div>
                     </div>
@@ -325,9 +288,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
-                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} <span class="badge bg-light-warning border border-warning"><i
-                                            class="ti ti-trending-up"></i> 12%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_kamar }} </h4>
                             </div>
                         </div>
                     </div>
@@ -391,10 +352,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6 class="mb-2 f-w-400 text-muted">Total Menu</h6>
-                                <h4 class="mb-3">{{ $menu }} <span
-                                        class="badge bg-light-warning border border-warning"><i class="ti ti-trending-up"></i>
-                                        12%</span></h4>
-                                <p class="mb-0 text-muted text-sm">Tambah <span class="text-warning">3</span> pesanan baru</p>
+                                <h4 class="mb-3">{{ $menu }} </h4>
+
                             </div>
                         </div>
                     </div>
@@ -416,13 +375,9 @@
                                         <h6 class="mb-2 f-w-400 text-muted">Total {{ $value->nama_kategori_menu }}</h6>
                                         <h4 class="mb-3">
                                             {{ $jumlahMenuPerKategori[$value->id] ?? 0 }}
-                                            <span class="badge bg-light-danger border border-danger">
-                                                <i class="ti ti-trending-up"></i> 25%
-                                            </span>
+
                                         </h4>
-                                        <p class="mb-0 text-muted text-sm">
-                                            Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                                        </p>
+
                                     </div>
                                 </div>
                             </div>
@@ -430,16 +385,23 @@
                     @endif
 
             <div class="col-md-6 col-xl-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
-                        <h4 class="mb-3">Rp 8.5 Jt <span class="badge bg-light-danger border border-danger"><i
-                                    class="ti ti-trending-up"></i> 25%</span></h4>
-                        <p class="mb-0 text-muted text-sm">Naik <span class="text-danger">Rp 1.7 Jt</span> dari kemarin
-                        </p>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-2 f-w-400 text-muted">Pendapatan Hari Ini</h6>
+                                <h4 class="mb-3">Rp {{ $pendapatan_menu_hari_ini }} </h4>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-2 f-w-400 text-muted">Total Pendapatan</h6>
+                                <h4 class="mb-3">Rp {{ $total_pendapatan_menu }}</h4>
+
+                            </div>
+                        </div>
+                    </div>
         </div>
         <div class="row">
             <div class="col-md-12 col-xl-8">

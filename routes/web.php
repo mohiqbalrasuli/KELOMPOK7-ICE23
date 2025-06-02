@@ -65,7 +65,7 @@ Route::prefix('admin')
         Route::post('/data-menu/update/{id}', [MenuController::class, 'update']);
         Route::get('/data-menu/delete/{id}', [MenuController::class, 'delete']);
         // pesanan menu
-        Route::get('/pesanan-menu', [MenuController::class, 'pesanan']);
+        Route::get('/pesanan-menu', [pesananController::class, 'pesanan_menu']);
         // metode pembayaran
         Route::get('/metode-pembayaran', [MetodePembayaranController::class, 'index']);
         Route::get('/metode-pembayaran/create', [MetodePembayaranController::class, 'create']);
@@ -87,10 +87,14 @@ Route::prefix('admin')
         // pemesanan kamr
         Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::post('/mybee-hotel&resto/pembayaran-kamar/proses',[PembayaranController::class,'bayar_kamar']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar/berhasil',[PembayaranController::class,'pembayaran_kamar_berhasil']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar/delete{id}',[LandingController::class,'delete_pesanan_kamar']);
         // pesanan menu
         Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
         Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+        Route::post('/mybee-hotel&resto/pembayaran-menu/proses',[PembayaranController::class,'bayar_menu']);
+        Route::get('/mybee-hotel&resto/pembayaran-menu/berhasil',[PembayaranController::class,'pembayaran_menu_berhasil']);
         Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::prefix('staff-kamar')
@@ -119,7 +123,9 @@ Route::prefix('staff-kamar')
         Route::post('/kamar/update/{id}', [KamarController::class, 'update']);
         Route::get('/kamar/delete/{id}', [KamarController::class, 'delete']);
         // pesanan kamar
-        Route::get('/pesanan-kamar', [KamarController::class, 'pesanan']);
+        Route::get('/pesanan-kamar', [pesananController::class, 'pesanan']);
+        // data pembayaran
+        Route::get('/data-pembayaran', [PembayaranController::class, 'index']);
         // landing
         Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
         Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
@@ -132,10 +138,13 @@ Route::prefix('staff-kamar')
         // pemesanan kamr
         Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::post('/mybee-hotel&resto/pembayaran-kamar/proses',[PembayaranController::class,'bayar_kamar']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar/delete/{id}',[LandingController::class,'delete_pesanan_kamar']);
          // pesanan menu
          Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
          Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+         Route::post('/mybee-hotel&resto/pembayaran-menu/proses',[PembayaranController::class,'bayar_menu']);
+        Route::get('/mybee-hotel&resto/pembayaran-menu/berhasil',[PembayaranController::class,'pembayaran_menu_berhasil']);
          Route::get('/mybee-hotel&resto/pembayaran-menu/delete{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::prefix('staff-restoran')
@@ -157,7 +166,9 @@ Route::prefix('staff-restoran')
         Route::post('/data-menu/update/{id}', [MenuController::class, 'update']);
         Route::get('/data-menu/delete/{id}', [MenuController::class, 'delete']);
         // pesanan menu
-        Route::get('/pesanan-menu', [MenuController::class, 'pesanan']);
+        Route::get('/pesanan-menu', [pesananController::class, 'pesanan_menu']);
+        // data pembayaran
+        Route::get('/data-pembayaran', [PembayaranController::class, 'index']);
         // landing
         Route::get('/mybee-hotel&resto', [LandingController::class, 'index']);
         Route::get('/mybee-hotel&resto/rooms', [LandingController::class, 'rooms']);
@@ -171,10 +182,13 @@ Route::prefix('staff-restoran')
         // pemesanan kamr
         Route::post('/mybee-hotel&resto/pesanan-kamar/store', [LandingController::class, 'booking']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+        Route::post('/mybee-hotel&resto/pembayaran-kamar/proses',[PembayaranController::class,'bayar_kamar']);
         Route::get('/mybee-hotel&resto/pembayaran-kamar/delete{id}',[LandingController::class,'delete_pesanan_kamar']);
          // pesanan menu
          Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
          Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+         Route::post('/mybee-hotel&resto/pembayaran-kamar/proses',[PembayaranController::class,'bayar_menu']);
+        Route::get('/mybee-hotel&resto/pembayaran-kamar/berhasil',[PembayaranController::class,'pembayaran_menu_berhasil']);
          Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
     });
 Route::middleware(['auth', 'user'])->group(function () {
@@ -190,10 +204,14 @@ Route::middleware(['auth', 'user'])->group(function () {
     // pemesanan kamr
     Route::post('/mybee-hotel&resto/booking', [LandingController::class, 'booking']);
     Route::get('/mybee-hotel&resto/pembayaran-kamar', [LandingController::class, 'pembayaran_kamar']);
+    Route::post('/mybee-hotel&resto/pembayaran-kamar/proses',[PembayaranController::class,'bayar_kamar']);
+    Route::get('/mybee-hotel&resto/pembayaran-kamar/berhasil',[PembayaranController::class,'pembayaran_kamar_berhasil']);
     Route::get('/mybee-hotel&resto/pembayaran-kamar/delete/{id}',[LandingController::class,'delete_pesanan_kamar']);
      // pesanan menu
      Route::post('/mybee-hotel&resto/pesanan-menu/store',[LandingController::class,'order']);
      Route::get('/mybee-hotel&resto/pembayaran-menu', [LandingController::class, 'pembayaran_menu']);
+     Route::post('/mybee-hotel&resto/pembayaran-menu/proses',[PembayaranController::class,'bayar_menu']);
+    Route::get('/mybee-hotel&resto/pembayaran-menu/berhasil',[PembayaranController::class,'pembayaran_menu_berhasil']);
      Route::get('/mybee-hotel&resto/pembayaran-menu/delete/{id}',[LandingController::class,'delete_pesanan_menu']);
 });
 // landing page

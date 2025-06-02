@@ -148,6 +148,8 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
 
         /*
          * Application Service Providers...

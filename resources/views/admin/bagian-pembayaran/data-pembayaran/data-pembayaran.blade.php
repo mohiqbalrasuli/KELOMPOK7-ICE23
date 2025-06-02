@@ -22,7 +22,8 @@
       <!-- [ breadcrumb ] end -->
       <!-- [ Main Content ] start -->
       <div class="row">
-        <!-- Default Styling table start -->
+        @if (auth()->user()->role==='admin')
+      <!-- Default Styling table start -->
         <div class="col-md-15">
           <div class="card">
             <div class="card-header">
@@ -37,23 +38,22 @@
                       <th>Nama</th>
                       <th>Metode Pembayaran</th>
                       <th>Tanggal</th>
-                      <th>Jenis Pesanan</th>
-                      <th>Status</th>
-                      <th>Aksi</th>
+                      <th>Total Bayar</th>
+                      <th>Bukti Pembayaran</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pesanan_kamar as $key =>$value )
                     <tr>
-                      <td>1</td>
-                      <td>Iqbal</td>
-                      <td>BRI</td>
-                      <td>2025-05-16</td>
-                      <td>Kamar</td>
-                      <td>Sudah Lunas</td>
-                      <td>
-                        <a href="" class="btn btn-primary">Detail</a>
-                      </td>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->metode_pembayaran->nama_bank }}</td>
+                        <td>{{ $value->tanggal_bayar }}</td>
+                        <td>{{ $value->total_harga }}</td>
+                        <td><img src="{{ asset('assets/images/bukti_pembayaran_kamar/'.$value->bukti_pembayaran) }}" alt="" width="100px"></td>
                     </tr>
+
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -76,21 +76,22 @@
                       <th>Nama</th>
                       <th>Metode Pembayaran</th>
                       <th>Tanggal</th>
-                      <th>Status</th>
-                      <th>Aksi</th>
+                      <th>Total Bayar</th>
+                      <th>Bukti Pembayaran</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pesanan_menu as $key =>$value )
                     <tr>
-                      <td>1</td>
-                      <td>Iqbal</td>
-                      <td>BRI</td>
-                      <td>2025-05-16</td>
-                      <td>Sudah Lunas</td>
-                      <td>
-                        <a href="" class="btn btn-primary">Detail</a>
-                      </td>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->metode_pembayaran->nama_bank }}</td>
+                        <td>{{ $value->tanggal_bayar }}</td>
+                        <td>{{ $value->total_harga }}</td>
+                        <td><img src="{{ asset('assets/images/bukti_pembayaran_kamar/'.$value->bukti_pembayaran) }}" alt="" width="100px"></td>
                     </tr>
+
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -98,6 +99,86 @@
           </div>
         </div>
         <!-- Default Styling table start -->
+        @elseif (auth()->user()->role==='staff_pengelola_kamar')
+        <!-- Default Styling table start -->
+        <div class="col-md-15">
+          <div class="card">
+            <div class="card-header">
+              <h3>Data Pembayaran Hotel</h3>
+            </div>
+            <div class="card-body table-border-style">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Metode Pembayaran</th>
+                      <th>Tanggal</th>
+                      <th>Total Bayar</th>
+                      <th>Bukti Pembayaran</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($pesanan_kamar as $key =>$value )
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->metode_pembayaran->nama_bank }}</td>
+                        <td>{{ $value->tanggal_bayar }}</td>
+                        <td>{{ $value->total_harga }}</td>
+                        <td><img src="{{ asset('assets/images/bukti_pembayaran_kamar/'.$value->bukti_pembayaran) }}" alt="" width="100px"></td>
+                    </tr>
+
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Default Styling table start -->
+
+        @elseif (auth()->user()->role==='staff_pengelola_restoran')
+        <!-- Default Styling table start -->
+        <div class="col-md-15">
+          <div class="card">
+            <div class="card-header">
+              <h3>Data Pembayaran Restoran</h3>
+            </div>
+            <div class="card-body table-border-style">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Metode Pembayaran</th>
+                      <th>Tanggal</th>
+                      <th>Total Bayar</th>
+                      <th>Bukti Pembayaran</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($pesanan_menu as $key =>$value )
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->metode_pembayaran->nama_bank }}</td>
+                        <td>{{ $value->tanggal_bayar }}</td>
+                        <td>{{ $value->total_harga }}</td>
+                        <td><img src="{{ asset('assets/images/bukti_pembayaran_kamar/'.$value->bukti_pembayaran) }}" alt="" width="100px"></td>
+                    </tr>
+
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Default Styling table start -->
+        @endif
       </div>
       <!-- [ Main Content ] end -->
 </div>

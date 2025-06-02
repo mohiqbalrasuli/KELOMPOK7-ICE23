@@ -34,6 +34,7 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Nama Pembeli</th>
                       <th>Nama Menu</th>
                       <th>Jumlah</th>
                       <th>Total Harga</th>
@@ -42,14 +43,17 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pesanan as $key =>$value )
                     <tr>
-                      <td>1</td>
-                      <td>Nasi Goreng</td>
-                      <td>1</td>
-                      <td>Rp. 10.000</td>
-                      <td>1</td>
-                      <td>Menunggu</td>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->menu->nama_menu }}</td>
+                        <td>{{ $value->jumlah }}</td>
+                         <td>{{ $value->total_harga }}</td>
+                        <td>{{ $value->kursi }}</td>
+                        <td>{{ $value->status }}</td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

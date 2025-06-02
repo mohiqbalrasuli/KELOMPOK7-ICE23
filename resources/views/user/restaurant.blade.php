@@ -125,7 +125,6 @@
                                         <input type="number" name="jumlah" class="qty-input" value="1" min="1" onchange="onQtyChange(this)">
                                         <button type="button" class="qty-btn" onclick="increaseQty(this)">+</button>
                                       </div>
-                                    <input type="hidden" name="jumlah" value="1">
                                     <input type="hidden" name="kursi" value="1">
                                     <button class="btn btn-primary" style="margin-top: 10px" type="submit">Tambahkan Pesanan</button>
                                 </form>

@@ -96,9 +96,4 @@ class MenuController extends Controller
             return redirect('staff-restoran/data-menu')->with('success', 'Data Berhasil Dihapus');
         }
     }
-
-    public function pesanan()
-    {
-        return view('admin.bagian-menu.pesanan-menu.pesanan-menu');
-    }
 }

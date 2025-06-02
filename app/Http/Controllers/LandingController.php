@@ -71,10 +71,14 @@ class LandingController extends Controller
 
     public function pembayaran_kamar()
     {
-        $jumlah_pesanan = pesanan_kamar::where('user_id', Auth::id())->count();
-        $pesanan = pesanan_kamar::where('user_id', Auth::id())->with('kamar')->get();
+        $total_pesanan = pesanan_kamar::where('user_id', Auth::user()->id)->where('status','menunggu')->sum('total_harga');
+        $jumlah_pesanan = pesanan_kamar::where('user_id', Auth::id())->where('status','menunggu')->count();
+        $pesanan = pesanan_kamar::where('user_id', Auth::id())->where('status','menunggu')->with('kamar')->get();
+        $total_pesanan_bayar = pesanan_kamar::where('user_id', Auth::user()->id)->where('status','konfirmasi')->sum('total_harga');
+        $jumlah_pesanan_bayar = pesanan_kamar::where('user_id', Auth::id())->where('status','konfirmasi')->count();
+        $pesanan_bayar = pesanan_kamar::where('user_id', Auth::id())->where('status','konfirmasi')->with('kamar')->get();
         $metode_pembayaran = metode_pembayaran::all();
-        return view('user.pembayaran-kamar', compact('pesanan', 'metode_pembayaran','jumlah_pesanan'));
+        return view('user.pembayaran-kamar', compact('pesanan', 'metode_pembayaran','jumlah_pesanan','total_pesanan','jumlah_pesanan_bayar','total_pesanan_bayar','pesanan_bayar'));
     }
     public function delete_pesanan_kamar($id)
     {
@@ -141,11 +145,15 @@ class LandingController extends Controller
 
     public function pembayaran_menu()
     {
+        $total_pesanan_bayar = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'konfirmasi')->sum('total_harga');
+        $jumlah_menu_bayar = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'konfirmasi')->count();
+        $pesanan_bayar = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'konfirmasi')->with('menu')->get();
+        $total_pesanan = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'menunggu')->sum('total_harga');
         $jumlah_menu = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'menunggu')->count();
         $pesanan = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'menunggu')->with('menu')->get();
         // $pesanan = pesanan_menu::where('user_id', Auth::user()->id)->where('status', 'menunggu')->with('menu')->get();
         $metode_pembayaran = metode_pembayaran::all();
-        return view('user.pembayaran-menu',compact('jumlah_menu','pesanan','metode_pembayaran'));
+        return view('user.pembayaran-menu',compact('jumlah_menu','pesanan','metode_pembayaran','total_pesanan','total_pesanan_bayar','jumlah_menu_bayar','pesanan_bayar'));
     }
 
     public function delete_pesanan_menu($id)

@@ -60,11 +60,11 @@
                       <td>{{ $value->harga }}</td>
                       <td>
                         @if (auth()->user()->role === 'admin')
-                        <a href="{{ url('admin/menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
-                        <a href="{{ url('admin/menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('admin/data-menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('admin/data-menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
                         @elseif (auth()->user()->role === 'staff_pengelola_restoran')
-                        <a href="{{ url('staff-restoran/menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
-                        <a href="{{ url('staff-restoran/menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
+                        <a href="{{ url('staff-restoran/data-menu/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ url('staff-restoran/data-menu/delete/'.$value->id) }}" class="btn btn-danger">Hapus</a>
                         @endif
                         </tr>
                       @endforeach

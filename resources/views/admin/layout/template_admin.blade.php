@@ -182,7 +182,7 @@
                             <i class="ti ti-news"></i>
                         </li>
                         <li class="pc-item">
-                            <a href="{{ url('admin/kategori-menu') }}" class="pc-link">
+                            <a href="{{ url('staff-restoran/kategori-menu') }}" class="pc-link">
                                 <span class="pc-micon"><i class="ti ti-tools-kitchen-2"></i></span>
                                 <span class="pc-mtext">Kategori Menu</span>
                             </a>
@@ -340,7 +340,7 @@
                                             class="ti ti-power text-danger"></i></a>
                                 </div>
                             </div>
-                            <ul class="nav drp-tabs nav-fill nav-tabs" id="mydrpTab" role="tablist">
+                            {{-- <ul class="nav drp-tabs nav-fill nav-tabs" id="mydrpTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="drp-t1" data-bs-toggle="tab"
                                         data-bs-target="#drp-tab-1" type="button" role="tab"
@@ -353,8 +353,8 @@
                                         aria-controls="drp-tab-2" aria-selected="false"><i
                                             class="ti ti-settings"></i> Setting</button>
                                 </li>
-                            </ul>
-                            <div class="tab-content" id="mysrpTabContent">
+                            </ul> --}}
+                            {{-- <div class="tab-content" id="mysrpTabContent">
                                 <div class="tab-pane fade show active" id="drp-tab-1" role="tabpanel"
                                     aria-labelledby="drp-t1" tabindex="0">
                                     <a href="#!" class="dropdown-item">
@@ -401,7 +401,7 @@
                                         <span>History</span>
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </li>
                 </ul>
